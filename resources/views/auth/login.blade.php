@@ -17,9 +17,9 @@
         <span>Remember me</span>    
         <br><br>
         <div class="login-button" action= "HomePage">   
-        <button name="log" id="log" onclick="goto_HomePage()"> Log In </button>       
+        <button class="btn btn-primary" id="login" onclick="goto_HomePage()"> Log In </button>       
         <br><br></div>       
-        <div class="remember"><a class="forgot" href="HomePage">Forgot Password</a></div>
+        <div class="remember"><a class="forgot" href="HomePage">Forgot Password?</a></div>
     </form>     
 </div>    
 @endsection
