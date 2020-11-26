@@ -1,0 +1,234 @@
+body{   
+    margin: auto;  
+    padding: 0;
+    background-color:#C5C1C0;
+    font-family: 'Arial';  
+}
+.main{
+    padding-top: 100px;
+}
+.row{
+    width: 1000px;
+    height: 500px;  
+    overflow: hidden;  
+    margin: auto;  
+    padding: 80px;   
+    background: #1A2930; 
+    border-radius: 25px ;
+    position: relative;
+    -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+    -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+    box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+}
+
+.column {
+    float: left;
+    height: 100%;
+    width: 33.33%;
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+  }
+.button{
+    width: 260px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+.buttons2{
+    width: 260px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+.buttons3{
+    width: 260px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+    .button1 {
+        background-color: #1A2930;
+        color: white;
+        border: 3px solid #4CAF50;
+    }
+  
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+  
+    .button2 {
+        background-color:#1A2930;
+        color: white;
+        border: 3px solid #4CAF50;
+    }
+  
+    .button2:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .button3 {
+        background-color:#1A2930;
+        color: white;
+        border: 3px solid #4CAF50;
+    }
+  
+    .button3:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .button4 {
+        background-color:#1A2930;
+        color: white;
+        border: 3px solid #b4fc84;
+    }
+    .button4:hover {
+        background-color: #b4fc84;
+        color: #0A1612;
+    }
+    .button5 {
+        background-color:#1A2930;
+        color: white;
+        border: 3px solid #b4fc84;
+    }
+    .button5:hover {
+        background-color: #b4fc84;
+        color: #0A1612;
+    }
+    .button6 {
+        background-color:#1A2930;
+        color: white;
+        border: 3px solid #F7CE3E;
+    }
+    .button6:hover {
+        background-color: #F7CE3E;
+        color: #0A1612;
+    }
+    .button7 {
+        background-color:#1A2930;
+        color: whites;
+        border: 3px solid #F7CE3E;
+    }
+    .button7:hover {
+        background-color: #F7CE3E;
+        color: #0A1612;
+    }
+.row2{
+    width: 300px;
+    height: 5px;  
+    overflow: hidden;  
+    margin: auto;  
+    padding: 80px;
+    float: center;  
+}
+#log{  
+    width: 200px;  
+    height: 40px;    
+    border-radius: 20px;  
+    padding-left: 7px;
+    font-size: 18px;
+    border: 2px solid #1A2930; 
+    background-color:#C5C1C0;  
+    color: #1A2930;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+#log:hover{
+    border: #1A2930;
+    background-color: #1A2930;  
+    color:#C5C1C0;
+}
+
+.bar-item{
+    padding:8px 16px;
+    float:left;
+    width:auto;
+    border:none;
+    display:block;
+    outline:0
+}
+.sidebar{
+    height:100%;
+    width:500px;
+    opacity: 80% ;
+    background-color: #1A2930;
+    position: fixed !important;
+    z-index: 1;
+    overflow:auto;
+    -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+    -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+    box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+}
+.border-right{
+    border-right:1px solid #1A2930 !important
+}
+.reports_button{
+    text-align: center;
+    width:100%;
+    font: 25px sans-serif;
+    height: 80px;
+    color: #C5C1C0;
+    white-space:pre;
+}
+.reports_button:hover{
+    color:#000 !important;
+    background-color:#ccc !important;
+    text-decoration: none;
+}
+.bar-block .bar-item{
+    width:100%;
+    display:block;
+    padding:8px 16px;
+    text-align: left;
+    border:none;
+    white-space:normal;
+    float:none;
+    outline:0
+}
+.phase1-header{
+    background-color: #4CAF50 ;
+    padding: 5px;
+}
+.phase2-header{
+    background-color: #b4fc84 ;
+    padding: 5px;
+}
+.phase3-header{
+    background-color: #F7CE3E ;
+    padding: 5px;
+}
+.large{
+    size: 50px;
+    text-align: left;
+    font-size:12px !important;
+}
+.phase1{
+    background-color: #4CAF50;
+}
+.phase2{
+    background-color: #b4fc84;
+}
+.phase3{
+    background-color: #F7CE3E;
+}
+h2{
+    color: #1A2930;
+}
