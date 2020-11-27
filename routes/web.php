@@ -21,21 +21,19 @@ Route::get('/HomePage', function () {
     return view('HomePage');
 });
 
-Route::get('/Laravel', function () {
-    return view('welcome');
-});
 Auth::routes();
 
 Route::get('/Login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', function () {
-    return view('home');
- });
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/auth/passwords/reset', function () {
+    return view('auth/passwords/reset');
+});
 
-Route::get('/passwords/reset', function () {
-    return view('passwords/reset');
+Route::get('/Phase1/AddCourses', function () {
+    return view('Phase1/AddCourses');
+});
+Route::get('/Phase1/AddTeacher', function () {
+    return view('Phase1/AddTeacher');
 });

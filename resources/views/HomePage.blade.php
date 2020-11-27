@@ -35,8 +35,8 @@
 <div class= "main-part">
   <div class="p1-row">
     <span class="column Phase1">
-      <div><button class="buttons1 button1">Add Course</button></div>
-      <div><button class="buttons1 button2">Add Teacher</button></div>
+      <div><button class="buttons1 button1" onclick="window.location.href='http://127.0.0.1:8000/Phase1/AddCourses';">Add Course</button></div>
+      <div><button class="buttons1 button2" onclick="window.location.href='http://127.0.0.1:8000/Phase1/AddTeacher';">Add Teacher</button></div>
       <div><button class="buttons1 button3" onclick = "button3_open()">Reports</button></div>
     </span>
 

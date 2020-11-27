@@ -22,7 +22,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-custom shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('login') }}">IUTcms</a>
+                <a class="navbar-brand">IUTcms</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,11 +36,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" onclick = "AddMore_open()">Add More</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="/">Back</a>
                                 </li>
                             @endif
                         @else
@@ -67,9 +67,10 @@
             </div>
         </nav>
 
-        <main class="homepage">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
-</html>
+</html>  
+            

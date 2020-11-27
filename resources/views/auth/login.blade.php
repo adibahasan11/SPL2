@@ -17,7 +17,7 @@
         <span>Remember me</span>    
         <br><br>
         <div class="login-button" action= "HomePage">   
-        <button class="btn btn-primary" id="login" onclick="goto_HomePage()"> Log In </button>       
+        <button class="btn btn-primary" id="login" onclick="window.location.href='http://127.0.0.1:8000/HomePage';"> Log In </button>       
         <br><br></div>       
         <div class="remember"><a class="forgot" href="HomePage">Forgot Password?</a></div>
     </form>     

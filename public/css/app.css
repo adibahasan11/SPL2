@@ -2120,6 +2120,7 @@ pre code {
 }
 
 .form-control {
+  font-size: 10px;
   display: block;
   width: 100%;
   height: calc(1.6em + 0.75rem + 2px);
@@ -2268,6 +2269,9 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
+}
+.form-group1{
+  width: 100px;
 }
 
 .form-text {
@@ -2668,6 +2672,21 @@ textarea.form-control.is-invalid {
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
+}
+.btn-edit {
+  width: 100px !important;  
+  height: 30px !important;
+  font-size: 12px !important;
+  border: 2px solid #1A2930 !important; 
+  background-color:#C5C1C0 !important;  
+  color: #1A2930 !important;
+}
+
+.btn-edit:hover {
+  border:#1A2930 !important;
+  background-color:#1A2930 !important;  
+  color: #C5C1C0 !important;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -4031,6 +4050,15 @@ input[type=button].btn-block {
   height: 1rem;
   content: "";
   background: no-repeat 50%/50% 50%;
+}
+
+.c-box{
+  padding-left: 30px;
+}
+
+.teacher-checkbox{
+  width: 17px;
+  height: 17px;
 }
 
 .custom-checkbox .custom-control-label::before {
@@ -8660,7 +8688,9 @@ button.bg-dark:focus {
 .py-4 {
   padding-top: 1.5rem !important;
 }
-
+.homepage{
+  padding-top: 0px !important;
+}
 .pr-4,
 .px-4 {
   padding-right: 1.5rem !important;
@@ -11148,7 +11178,7 @@ a{
 .sidebar{
   height:100%;
   width:500px;
-  opacity: 80% ;
+  opacity: 95% ;
   background-color: #1A2930;
   position: fixed !important;
   z-index: 1;
