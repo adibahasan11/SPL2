@@ -37,3 +37,6 @@ Route::get('/Phase1/AddCourses', function () {
 Route::get('/Phase1/AddTeacher', function () {
     return view('Phase1/AddTeacher');
 });
+Route::get('/Phase1/CourseList', function () {
+    return view('Phase1/CourseList');
+});

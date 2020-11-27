@@ -3,7 +3,7 @@
 @section('content')
 
 <table class="table table-hover">
-  <thead>
+  <thead class="p1">
     <tr>
       <th scope="col">Full Name</th>
       <th scope="col">Initials</th>

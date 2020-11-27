@@ -7,8 +7,8 @@
     <h2 class="heading bar-item"> Reports </h2>
   </div>
   <br>
-    <a href="#" class="bar-item reports_button">Course List</a>
-    <a href="#" class="bar-item reports_button">Teacher's List</a>
+    <a href="Phase1/CourseList" class="bar-item reports_button">Course List</a>
+    <a href="Phase1/CourseList" class="bar-item reports_button">Teacher's List</a>
 </div>
 
 <div class="sidebar bar-block border-right" style="display:none" id="mySidebar2">
