@@ -1771,7 +1771,6 @@ pre code {
     margin-left: 91.6666666667%;
   }
 }
-
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -2680,6 +2679,10 @@ fieldset:disabled a.btn {
   border: 2px solid #1A2930 !important; 
   background-color:#C5C1C0 !important;  
   color: #1A2930 !important;
+}
+
+#edit{
+  margin-bottom: 10px;
 }
 
 .btn-edit:hover {
@@ -11046,6 +11049,11 @@ a{
   -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
   -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
   box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+}
+
+.p1{
+  background-color: #4CAF50;
+  opacity: 80%;
 }
 
 .column {
