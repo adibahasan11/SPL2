@@ -26,4 +26,17 @@ function AddMore_open() {
 function AddMore_Submit() {
     document.getElementById("submit").textContent = "Edit";
 }
+function edit() {
+    if (document.getElementById("edit").textContent= "Edit"){
+        document.getElementById("edit").textContent = "Submit";
+        document.getElementById("delete").style.display = "block";
+    }
+    else{
+        document.getElementById("edit").textContent = "Edit";
+        document.getElementById("delete").style.display = "none";
+    }
+}
 
+function DeleteRow() {
+    document.getElementById(row1).style.display = "none";
+}
