@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr id="row1">
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div</td>
       <td><div class="form-group">
@@ -24,7 +24,11 @@
         <option>Lecturer</option>
         </select></div>
       <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Active"></div></td>
-      <td><div class="form-group"><button class="btn btn-primary btn-edit" id="login"> Edit </button></div></td>
+      <td><div class="form-group">
+      <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Edit </button>
+      <button class="btn btn-primary btn-edit" style= "display:none" onclick = "Submit()" id="submit1"> Submit </button>
+      <button class="btn btn-primary btn-edit" style= "display:none" onclick = "DeleteRow()" id="delete"> Delete </button>
+      </div></td>
     </tr>
     <tr>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>

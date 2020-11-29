@@ -35,10 +35,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/home">Back</a>
-                                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="AddMore_open()">Add More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Back</a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -18,23 +18,23 @@ Route::get('/', function () {
 });
 Route::get('/logout', function () {
     Auth::logout();
-   return Redirect::to('login');
+    return Redirect::to('login');
 });
 
 Route::get('/home', function () {
     return view('home');
 });
 
-Auth::routes();
+//Route::resource('Phase1', 'AddCoursesController');
 
+Auth::routes();
 
 Route::get('logout', '\app\Http\Controllers\Auth\LoginController@logout');
 
-Auth::routes();
-
-Route::get('/Phase1/AddCourses', function () {
+/*Route::get('/Phase1/AddCourses', function () {
     return view('Phase1/AddCourses');
-});
+});*/
+
 Route::get('/Phase1/AddTeacher', function () {
     return view('Phase1/AddTeacher');
 });
