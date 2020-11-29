@@ -2,6 +2,12 @@
 
 @section('content')
 
+<!--@if (\Session:: has('success'))
+<div class="alert alert-success">
+  <p>{{\Session::get('success')}}</p>
+</div> 
+@endif-->
+
 <table class="table table-hover">
   <thead class="p1">
     <tr>
@@ -19,7 +25,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr id="row1">
+    <tr id="row1"> <form method ="POST" action="{{ url('Phase1') }}">
       <th scope="row">1</th>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div</td>
@@ -53,8 +59,8 @@
       <td><div class="form-group">
         <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Edit </button>
         <button class="btn btn-primary btn-edit" style= "display:none" onclick = "DeleteRow()" id="delete"> Delete </button></div></td>
-    </tr>
-    <tr>
+    </tr></form>
+    <!-- <tr>
     <th scope="row">2</th>
     <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div</td>
@@ -350,10 +356,10 @@
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><button class="btn btn-primary btn-edit" id="edit"> Edit </button></div></td>
-    </tr>
+    </tr>-->
 
     <tr style="display:none" id = "NewRow">
-      <th scope="row">11</th>
+      <th scope="row">2</th>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div</td>
       <td><div class="form-group">
