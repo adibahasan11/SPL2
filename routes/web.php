@@ -29,15 +29,15 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::get('logout', '\app\Http\Controllers\Auth\LoginController@logout');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-/*Route::get('/Phase1/AddCourses', function () {
-    return view('Phase1/AddCourses');
-});*/
+Route::get('addcourse','App\Http\Controllers\AddCoursesController@create');
+Route::post('create','App\Http\Controllers\AddCoursesController@store');
 
-Route::get('/Phase1/AddTeacher', function () {
-    return view('Phase1/AddTeacher');
-});
-Route::get('/Phase1/CourseList', function () {
-    return view('Phase1/CourseList');
-});
+Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');
+
+Route::get('addteacher','App\Http\Controllers\AddTeacherController@index');
+Route::post('createteacher','App\Http\Controllers\AddTeacherController@store');
+
+Route::get('TeacherList','App\Http\Controllers\AddTeacherController@create');
+
