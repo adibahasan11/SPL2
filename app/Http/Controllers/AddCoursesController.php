@@ -79,7 +79,8 @@ class AddCoursesController extends Controller
      */
     public function show($id)
     {
-        //
+        $courses = DB::select('SELECT * FROM added_courses WHERE id = ?',[$id]);
+        return view('Phase1.UpdateCourse',['courses'=>$courses]);
     }
 
     /**
@@ -88,9 +89,22 @@ class AddCoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $CourseCode = $request->input('CourseCode');
+        $CourseTitle = $request->input('CourseTitle');
+        $Dept = $request->input('Dept');
+        $Sem = $request->input('Sem');
+        $CourseType = $request->input('CourseType');
+        $Comp_Mand = $request->input('Comp_Mand');
+        $Credit = $request->input('Credit');
+        $ContactHour = $request->input('ContactHour');
+        $E_ContactHour = $request->input('E_ContactHour');
+
+        DB::update('UPDATE added_courses 
+            SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=? 
+            WHERE id = ?',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour, $id]);
+        return redirect('/addcourse')->with('message' ,'Record updated successfully.');
     }
 
     /**
