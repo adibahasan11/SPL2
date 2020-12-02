@@ -19,8 +19,6 @@
   <td>{{ $teacher->Initials }}</td>
   <td>{{ $teacher->Designation }}</td>
   <td>{{ $teacher->IsActive }}</td>
-  <td><div class="form-group">
-        <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Edit </button></div></td>
 </tr>
  @endforeach
 

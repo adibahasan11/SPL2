@@ -42,5 +42,8 @@ Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');
 Route::get('addteacher','App\Http\Controllers\AddTeacherController@index');
 Route::post('createteacher','App\Http\Controllers\AddTeacherController@store');
 
+Route::get('editTeacher/{id}','App\Http\Controllers\AddTeacherController@show');
+Route::post('editTeacher/{id}','App\Http\Controllers\AddTeacherController@edit');
+
 Route::get('TeacherList','App\Http\Controllers\AddTeacherController@create');
 

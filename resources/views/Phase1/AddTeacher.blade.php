@@ -7,6 +7,11 @@
   <p>{{\Session::get('success')}}</p>
 </div> 
 @endif
+@if(Session::has('message'))
+  <div class="alert alert-success" id="res_message">
+  <p>{{ \Session::get('message') }}</p>
+  </div>
+@endif
 <form action = "/createteacher" method = "post">
 @csrf
 <table class="table table-hover">
@@ -27,7 +32,7 @@
   <td>{{ $teacher->Designation }}</td>
   <td>{{ $teacher->IsActive }}</td>
   <td><div class="form-group">
-        <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Edit </button></div></td>
+    <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->id }}'> Edit </a></div></td>
 </tr>
  @endforeach
     <tr id="row1">

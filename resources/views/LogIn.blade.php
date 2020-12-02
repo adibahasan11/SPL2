@@ -25,16 +25,12 @@
     <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css">
+
+
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-    * Template Name: Butterfly - v2.1.0
-    * Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
 </head>
 
 <body>
@@ -137,9 +133,9 @@
                             <div class="member-img">
                                 <img src="assets/img/team/Nafiz.jpg" class="img-fluid" alt="">
                                 <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                    <a href="https://github.com/nafiz1307">G</a>
+                                    <a href="https://www.facebook.com/NafizZamanArnob"><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/nafizzamanarnob"><i class="icofont-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="member-info">
@@ -153,9 +149,9 @@
                             <div class="member-img">
                                 <img src="assets/img/team/adiba.jpg" class="img-fluid" alt="">
                                 <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                    <a href="https://github.com/adibahasan11">G</a>
+                                    <a href="https://www.facebook.com/adiba.h.lia"><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/in/adiba-hasan-9026831a5"><i class="icofont-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="member-info">
@@ -169,9 +165,9 @@
                             <div class="member-img">
                                 <img src="assets/img/team/srijon.jpg" class="img-fluid" alt="">
                                 <div class="social">
-                                    <a href=""><i class="icofont-twitter"></i></a>
-                                    <a href=""><i class="icofont-facebook"></i></a>
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                    <a href="https://github.com/smuhtasim">G</a>
+                                    <a href="https://www.facebook.com/srijon.muhtasim.1"><i class="icofont-facebook"></i></a>
+                                    <a href="https://github.com/smuhtasim"><i class="icofont-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="member-info">
@@ -201,7 +197,7 @@
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-<!-- Vendor JS Files 
+<!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -210,7 +206,7 @@
 <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="assets/vendor/counterup/counterup.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>-->
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
