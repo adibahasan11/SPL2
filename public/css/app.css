@@ -221,6 +221,8 @@ svg {
 }
 
 table {
+  border-left: 5px solid  #C5C1C0;
+  border-right: 5px solid #C5C1C0;
   border-collapse: collapse;
 }
 
@@ -1771,7 +1773,6 @@ pre code {
     margin-left: 91.6666666667%;
   }
 }
-
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -2680,6 +2681,10 @@ fieldset:disabled a.btn {
   border: 2px solid #1A2930 !important; 
   background-color:#C5C1C0 !important;  
   color: #1A2930 !important;
+}
+
+#submit1{
+  margin-bottom: 10px;
 }
 
 .btn-edit:hover {
@@ -11040,12 +11045,17 @@ a{
   overflow: hidden;  
   margin: auto;  
   padding: 80px;   
-  background: #1A2930; 
+  background: #1A2930 ; 
   border-radius: 25px ;
   position: relative;
   -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
   -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
   box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
+}
+
+.p1{
+  background-color: #4CAF50;
+  opacity: 80%;
 }
 
 .column {
@@ -11188,7 +11198,7 @@ a{
   box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
 }
 .border-right{
-  border-top: 1px solid #1A2930 !important;
+  border-top: 2px solid #1A2930 !important;
   border-right: 1px solid #1A2930 !important;
 }
 .reports_button{

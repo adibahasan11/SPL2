@@ -16,27 +16,40 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('LogIn');
 });
-
-Route::get('/HomePage', function () {
-    return view('HomePage');
+Route::get('/logout', function () {
+    Auth::logout();
+    return Redirect::to('login');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+//Route::resource('Phase1', 'AddCoursesController');
 
 Auth::routes();
 
-Route::get('/Login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Auth::routes();
+Route::get('addcourse','App\Http\Controllers\AddCoursesController@create');
+Route::post('create','App\Http\Controllers\AddCoursesController@store');
 
-Route::get('/auth/passwords/reset', function () {
-    return view('auth/passwords/reset');
-});
+Route::get('edit/{id}','App\Http\Controllers\AddCoursesController@show');
+Route::post('edit/{id}','App\Http\Controllers\AddCoursesController@edit');
 
-Route::get('/Phase1/AddCourses', function () {
-    return view('Phase1/AddCourses');
-});
-Route::get('/Phase1/AddTeacher', function () {
-    return view('Phase1/AddTeacher');
-});
-Route::get('/Phase1/CourseList', function () {
-    return view('Phase1/CourseList');
-});
+Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');
+
+Route::get('addteacher','App\Http\Controllers\AddTeacherController@index');
+Route::post('createteacher','App\Http\Controllers\AddTeacherController@store');
+
+Route::get('editTeacher/{id}','App\Http\Controllers\AddTeacherController@show');
+Route::post('editTeacher/{id}','App\Http\Controllers\AddTeacherController@edit');
+
+Route::get('TeacherList','App\Http\Controllers\AddTeacherController@create');
+
+Route::get('offeredcourses','App\Http\Controllers\OfferedCoursesContoller@index');
+
+Route::get('OfferedCourseList','App\Http\Controllers\OfferedCoursesContoller@create');
+
+Route::get('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@show');
+Route::post('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@update');

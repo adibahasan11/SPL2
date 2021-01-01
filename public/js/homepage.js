@@ -26,4 +26,14 @@ function AddMore_open() {
 function AddMore_Submit() {
     document.getElementById("submit").textContent = "Edit";
 }
+function edit() {
+        document.getElementById("edit").style.display = "none";
+        document.getElementById("submit1").style.display = "block";
+        document.getElementById("delete").style.display = "block";
+}
 
+function Submit() {
+    document.getElementById("submit1").style.display = "none";
+    document.getElementById("delete").style.display = "none";
+    document.getElementById("edit").style.display = "block";
+}
