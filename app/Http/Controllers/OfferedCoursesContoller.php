@@ -17,8 +17,13 @@ class OfferedCoursesContoller extends Controller
      */
     public function index()
     {
-        $courses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId');
-        return view('Phase2.OfferedCourses',['courses'=>$courses]);
+        $offeredcourses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered"');
+        //return view('Phase2.OfferedCourses',['offeredcourses'=>$offeredcourses]);
+
+        $courses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "No"');
+        //return view('Phase2.OfferedCourses',['courses'=>$courses]);
+
+        return view('Phase2.OfferedCourses')->with(array('offeredcourses'=>$offeredcourses,'courses'=>$courses));
     }
 
     /**
@@ -84,10 +89,10 @@ class OfferedCoursesContoller extends Controller
         $No_of_Teachers = $request->input('No_of_Teachers');
         $Load = $request->input('Load');
 
-        DB::update('UPDATE offer_course 
-        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Load=? 
-        WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $OfferedCourseId]);
-        return  redirect('/offercourse') -> with('success', 'Course Offered');
+        DB::update('UPDATE offered_course 
+        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=? 
+        WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $id]);
+        return  redirect('/offeredcourses') -> with('success', 'Course Offered');
     }
 
     /**

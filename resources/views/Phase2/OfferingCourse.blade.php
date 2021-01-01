@@ -1,4 +1,4 @@
-@extends('Phase1.Phase1Layout')
+@extends('Phase2.Phase2Layout')
 
 @section('content')
 <div class="container">
@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                 <td>Offer Course?</td>
-                <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsOffered" value='<?php echo$courses[0]->IsOffered; ?>'></div></td>
+                <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsOffered" value='Offered'></div></td>
                 </tr>
                 <tr>
                     <td>Number of Sections</td>    
@@ -29,10 +29,7 @@
                     <td>Number of Teachers</td>    
                     <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="No_of_Teachers" value='<?php echo$courses[0]->No_of_Teachers; ?>'></div></td>
                 </tr>
-                <tr>
-                    <td>Load</td>    
-                    <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Load" value= {{ $courses[0]->ContactHour }}></div></td>
-                </tr>
+                
                 <tr>
                     <td></td>
                     <td>

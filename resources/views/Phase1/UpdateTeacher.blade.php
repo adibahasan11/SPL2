@@ -30,7 +30,7 @@
                 <tr>
                     <td>IsActive</td>
                     <td>
-                    <input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = '<?php echo$teachers[0]->IsActive; ?>'/>
+                    <input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'Yes'/>
                     </td>
                 </tr>
                     <br><br>

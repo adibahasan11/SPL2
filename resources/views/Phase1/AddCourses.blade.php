@@ -50,7 +50,7 @@
 </tr>
  @endforeach
     <tr id="row1">
-      <td>1</td>
+      <td>{{ $course->id+1 }}</td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseCode" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseTitle" required></div</td>
       <td><div class="form-group">

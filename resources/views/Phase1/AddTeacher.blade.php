@@ -16,7 +16,7 @@
 @csrf
 <table class="table table-hover">
   <thead class="p1">
-    <tr>
+    <tr><th></th><th></th>
       <th scope="col">Full Name</th>
       <th scope="col">Initials</th>
       <th scope="col">Designation</th>
@@ -26,7 +26,7 @@
   </thead>
   <tbody>
   @foreach ($teachers as $teacher)
-<tr>
+<tr><td></td><th></th>
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
   <td>{{ $teacher->Designation }}</td>
@@ -35,7 +35,7 @@
     <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->id }}'> Edit </a></div></td>
 </tr>
  @endforeach
-    <tr id="row1">
+    <tr id="row1"><th></th><th></th>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Name" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Initials" required></div</td>
       <td><div class="form-group">

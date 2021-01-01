@@ -4,7 +4,7 @@
 
 <table class="table table-hover">
   <thead class="p1">
-    <tr>
+    <tr><th></th> <th></th>
     <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
       <th scope="col">Semester</th>
@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   @foreach ($courses as $course)
-<tr>
+<tr><td></td> <td></td>
   <td>{{ $course->CourseCode }}</td>
   <td>{{ $course->CourseTitle }}</td>
   <td>{{ $course->Sem }}</td>
