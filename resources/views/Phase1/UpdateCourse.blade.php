@@ -78,7 +78,8 @@
                 </tr>
                 <tr>
                     <br><br>
-                    <td colspan = '2'>
+                    <td></td>
+                    <td>
                     <input type = 'submit'class="btn btn-primary btn-edit" value = "Update" />
                     </td>
                 </tr>

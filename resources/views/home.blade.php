@@ -17,7 +17,7 @@
     <h2 class="heading bar-item"> Reports </h2>
   </div>
   <br>
-    <a href="#" class="bar-item reports_button">Offered Courses</a>
+    <a href="OfferedCourseList" class="bar-item reports_button">Offered Courses</a>
     <a href="#" class="bar-item reports_button">Summary of Course Loads</a>
     <a href="#" class="bar-item reports_button">Faculty Requirements Calculation</a>
 </div>
@@ -41,7 +41,7 @@
     </span>
 
     <span class="column Phase2">
-      <div><button class="buttons2 button4">Offer Course</button></div>
+      <div><button class="buttons2 button4" onclick="window.location.href='/offeredcourses';">Offer Course</button></div>
       <div><button class="buttons2 button5" onclick = "button5_open()">Reports</button></div>
     </span>
 

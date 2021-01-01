@@ -50,7 +50,7 @@
 </tr>
  @endforeach
     <tr id="row1">
-      <td>{{ $course->id+1 }}</th>
+      <td>1</td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseCode" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseTitle" required></div</td>
       <td><div class="form-group">
@@ -87,40 +87,6 @@
       <td><div class="form-group">
         <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Submit </button>
         <!--<button class="btn btn-primary btn-edit" style= "display:none" onclick = "DeleteRow()" id="delete"> Delete </button></div></td>-->
-    </tr></form>
-  
-    <tr style="display:none" id = "NewRow">
-      <th scope="row">2</th>
-      <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
-      <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div</td>
-      <td><div class="form-group">
-        <select class="form-control" id="sel1">
-        <option>CSE</option>
-        <option>EEE</option>
-        <option>MCE</option>
-        <option>CEE</option>
-        </select>
-    </div></td>
-      <td><div class="form-group">
-        <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        </select>
-    </div></td>
-      <td><div class="form-group1"><select class="form-control" id="sel1">
-        <option>Theory</option>
-        <option>Lab</option>
-        </select></div></td>
-      <td><div class="form-group"><select class="form-control" id="sel1">
-        <option>C</option>
-        <option>M</option>
-        </select></div></td>
-      <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
-      <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
-      <td><div class="form-group"><input type="text" class="form-control" id="inputDefault"></div></td>
-      <td><div class="form-group"><button class="btn btn-primary btn-edit" onclick = "AddMore_Submit()" id="submit"> Submit </button></div></td>
     </tr>
   </tbody>
 </table>
