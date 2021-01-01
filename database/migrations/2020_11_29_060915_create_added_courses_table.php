@@ -15,7 +15,7 @@ class CreateAddedCoursesTable extends Migration
     {
         Schema::create('added_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('CourseCode');
+            $table->string('CourseCode')->nullable();
             $table->string('CourseTitle')->unique();
             $table->string('Dept');
             $table->string('Sem');

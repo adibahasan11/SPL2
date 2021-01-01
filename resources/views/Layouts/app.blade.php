@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>IUTcms-Login</title>
+    <title>IUTcms</title>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/homepage.js') }}"></script> 
