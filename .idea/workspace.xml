@@ -19,7 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="" />
+    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Layouts/ReportsLayout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Layouts/ReportsLayout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase1/AddCourses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase1/AddCourses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,11 +152,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kvjDIqBiF6mMW4wteWninlP6Td" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -184,6 +197,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1876" height="277" key="GridCell.Tab.0.bottom" timestamp="1606595077934">

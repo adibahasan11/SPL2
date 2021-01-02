@@ -53,3 +53,7 @@ Route::get('OfferedCourseList','App\Http\Controllers\OfferedCoursesContoller@cre
 
 Route::get('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@show');
 Route::post('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@update');
+
+
+Route::get('assignTeacher','App\Http\Controllers\assignTeacherController@index');
+Route::get('create','App\Http\Controllers\assignTeacherController@store');
