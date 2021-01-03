@@ -20,7 +20,7 @@
       <th scope="col">Full Name</th>
       <th scope="col">Initials</th>
       <th scope="col">Designation</th>
-      <th scope="col">IsActive?</th>
+      <th scope="col">Is Active?</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -29,7 +29,7 @@
 <tr><td></td><th></th>
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
-  <td>{{ $teacher->Designation }}</td>
+  <td>{{ $teacher->Designations }}</td>
   <td>{{ $teacher->IsActive }}</td>
   <td><div class="form-group">
     <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->id }}'> Edit </a></div></td>
@@ -45,7 +45,9 @@
         <option>Assistant Professor</option>
         <option>Lecturer</option>
         </select></div>
-      <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Yes"></div></td>
+      <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Yes"> Yes </div>
+      <div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="No"> No </div>
+      </td>
       <td><div class="form-group">
       <button class="btn btn-primary btn-edit" id="edit"> Submit </button>
       <button class="btn btn-primary btn-edit" style= "display:none" onclick = "Submit()" id="submit1"> Submit </button>

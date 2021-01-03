@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\AddTeacher;
+use App\Models\AddTeachers;
 
 class AddTeacherController extends Controller
 {
@@ -32,6 +32,26 @@ class AddTeacherController extends Controller
         return view('Phase1.TeacherList',['teachers'=>$teachers]);
     }
 
+    public function showCalculations()
+    {
+        $teachers = DB::select('select * from designation_loads order by Loads ASC');
+        $Professor = AddTeachers::where([
+            ['Designations', '=', 'Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AscProfessor = AddTeachers::where([
+            ['Designations', '=', 'Associate Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AstProfessor = AddTeachers::where([
+            ['Designations', '=', 'Assistant Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $Lecturer = AddTeachers::where([
+            ['Designations', '=', 'Lecturer'], ['IsActive', '=', 'Yes'] ])->count();
+
+        $sumOfLoads = DB::select('select Loads from offered_course');
+        //$sumOfLoads = DB::table('offered_course')
+               // ->select(DB::raw('SUM(Loads) as Loads'))
+                //->get();
+
+        return view('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,10 +62,10 @@ class AddTeacherController extends Controller
     {
         $Name = $request->input('Name');
         $Initials = $request->input('Initials');
-        $Designation = $request->input('Designation');
+        $Designations = $request->input('Designations');
         $IsActive = $request->input('IsActive');
 
-        DB::insert('insert into add_teachers(Name, Initials, Designation, IsActive) values(?, ?, ?, ?)',[$Name, $Initials, $Designation, $IsActive]);
+        DB::insert('insert into add_teachers(Name, Initials, Designations, IsActive) values(?, ?, ?, ?)',[$Name, $Initials, $Designations, $IsActive]);
 
         return  redirect('/addteacher') -> with('success', 'Data Added');
     }
@@ -72,12 +92,12 @@ class AddTeacherController extends Controller
     {
         $Name = $request->input('Name');
         $Initials = $request->input('Initials');
-        $Designation = $request->input('Designation');
+        $Designations = $request->input('Designations');
         $IsActive = $request->input('IsActive');
 
-        DB::update('UPDATE add_teachers 
-            SET Name=?, Initials=?, Designation=?, IsActive=? 
-            WHERE id = ?',[$Name, $Initials, $Designation, $IsActive, $id]);
+        DB::update('UPDATE add_teachers
+            SET Name=?, Initials=?, Designations=?, IsActive=? 
+            WHERE id = ?',[$Name, $Initials, $Designations, $IsActive, $id]);
         return redirect('/addteacher')->with('message' ,'Record updated successfully.');
     }
 
