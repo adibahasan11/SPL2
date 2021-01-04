@@ -18,8 +18,8 @@
   </div>
   <br>
     <a href="OfferedCourseList" class="bar-item reports_button">Offered Courses</a>
-    <a href="#" class="bar-item reports_button">Summary of Course Loads</a>
-    <a href="#" class="bar-item reports_button">Faculty Requirements Calculation</a>
+    <a href="SummaryCourseLoad" class="bar-item reports_button">Summary of Course Loads</a>
+    <a href="facultyRequirement" class="bar-item reports_button">Faculty Requirements Calculation</a>
 </div>
 
 <div class="sidebar bar-block border-right" style="display:none" id="mySidebar3">
@@ -37,12 +37,12 @@
     <span class="column Phase1">
       <div><button class="buttons1 button1" onclick="window.location.href='/addcourse';">Add Course</button></div>
       <div><button class="buttons1 button2" onclick="window.location.href='/addteacher';">Add Teacher</button></div>
-      <div><button class="buttons1 button3" onclick = "button3_open()">Reports</button></div>
+      <div><button class="buttons1 button3" onclick = "button3_open()">Report for Lists</button></div>
     </span>
 
     <span class="column Phase2">
       <div><button class="buttons2 button4" onclick="window.location.href='/offeredcourses';">Offer Course</button></div>
-      <div><button class="buttons2 button5" onclick = "button5_open()">Reports</button></div>
+      <div><button class="buttons2 button5" onclick = "button5_open()">Load Calculations</button></div>
     </span>
 
     <span class="column Phase3">
