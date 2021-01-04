@@ -18,7 +18,7 @@
   </thead>
   <tbody>
   @foreach ($courses as $course)
-<tr><td></td> <td></td>
+<tr>
   <td>{{ $course->CourseCode }}</td>
   <td>{{ $course->CourseTitle }}</td>
   <td>{{ $course->Sem }}</td>

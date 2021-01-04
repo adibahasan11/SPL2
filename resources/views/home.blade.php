@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="sidebar bar-block border-right" style="display:none" id="mySidebar1">
-  <div class = "phase1-header"> 
+  <div class = "phase1-header">
     <button onclick="button3_close()" class="bar-item large phase1">Close</button>
     <h2 class="heading bar-item"> Reports </h2>
   </div>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="sidebar bar-block border-right" style="display:none" id="mySidebar2">
-  <div class = "phase2-header"> 
+  <div class = "phase2-header">
     <button onclick="button5_close()" class="bar-item large phase2">Close</button>
     <h2 class="heading bar-item"> Reports </h2>
   </div>
@@ -23,7 +23,7 @@
 </div>
 
 <div class="sidebar bar-block border-right" style="display:none" id="mySidebar3">
-  <div class = "phase3-header"> 
+  <div class = "phase3-header">
     <button onclick="button7_close()" class="bar-item large phase3">Close</button>
     <h2 class="heading bar-item"> Reports </h2>
   </div>

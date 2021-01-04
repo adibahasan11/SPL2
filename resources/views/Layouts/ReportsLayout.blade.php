@@ -9,9 +9,9 @@
 
     <title>IUTcms-Reports</title>
 
-    <script src="{{ asset('js/homepage.js') }}"></script>    
+    <script src="{{ asset('js/homepage.js') }}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">  
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -46,4 +46,4 @@
         </main>
     </div>
 </body>
-</html>  
+</html>
