@@ -56,6 +56,7 @@
       <td><div class="form-group">
         <select class="form-control" id="sel1" name="Dept" required>
         <option>CSE</option>
+        <option>CSE(Part-time)</option>
         <option>EEE</option>
         <option>MCE</option>
         <option>CEE</option>

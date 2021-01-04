@@ -19,7 +19,7 @@
                 <tr>
                     <td>Designation</td>
                     <td>
-                    <select class="form-control" id="sel1" name = 'Designation' value = '<?php echo$teachers[0]->Designation; ?>'>
+                    <select class="form-control" id="sel1" name = 'Designations' value = '<?php echo$teachers[0]->Designations; ?>'>
                         <option>Professor</option>
                         <option>Associate Professor</option>
                         <option>Assistant Professor</option>
@@ -28,9 +28,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>IsActive</td>
+                    <td>Is Active?</td>
                     <td>
-                    <input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'Yes'/>
+                    <div><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'Yes'/> Yes</div>
+                    <div><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'No'/> No</div>
                     </td>
                 </tr>
                     <br><br>

@@ -36,6 +36,21 @@ class OfferedCoursesContoller extends Controller
         $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
         return view('Phase2.OfferedCourseList',['courses'=>$courses]);
     }
+    public function summaryOfCourseLoad()
+    {
+        $courses2 = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 2');
+
+        $courses4 = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 4');
+
+        $courses6 = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 6');
+
+        $courses8 = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
+        return view('Phase2.SummaryCourseLoad')->with(array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -87,12 +102,12 @@ class OfferedCoursesContoller extends Controller
         $IsOffered = $request->input('IsOffered');
         $No_of_Sec = $request->input('No_of_Sec');
         $No_of_Teachers = $request->input('No_of_Teachers');
-        $Load = $request->input('Load');
+        $Load = $request->input('Loads');
 
         DB::update('UPDATE offered_course 
-        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=? 
-        WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $id]);
-        return  redirect('/offeredcourses') -> with('success', 'Course Offered');
+        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Loads=? 
+        WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $id]);
+        return  redirect('/offeredcourses') -> with('success', 'Course Updated Successfully');
     }
 
     /**
