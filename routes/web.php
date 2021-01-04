@@ -55,5 +55,5 @@ Route::get('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@s
 Route::post('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@update');
 
 
-Route::get('assignTeacher','App\Http\Controllers\assignTeacherController@index');
-Route::get('create','App\Http\Controllers\assignTeacherController@store');
+Route::get('facultyRequirement','App\Http\Controllers\AddTeacherController@showCalculations');
+Route::get('SummaryCourseLoad','App\Http\Controllers\OfferedCoursesContoller@summaryOfCourseLoad');

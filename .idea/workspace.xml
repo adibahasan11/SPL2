@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SPL2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPL2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Layouts/ReportsLayout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Layouts/ReportsLayout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Phase1/AddCourses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase1/AddCourses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +33,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -161,7 +160,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -172,6 +173,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -181,6 +188,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606587840173</updated>
       <workItem from="1606587841751" duration="2404000" />
+      <workItem from="1609647270593" duration="5742000" />
+      <workItem from="1609771844110" duration="707000" />
     </task>
     <servers />
   </component>
@@ -219,5 +228,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606595077934" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609649458023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609649458023" />
   </component>
 </project>

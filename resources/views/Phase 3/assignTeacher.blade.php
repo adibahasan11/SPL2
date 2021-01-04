@@ -1,8 +1,22 @@
-@extends('Layouts.ReportsLayout')
+@extends('Phase2.Phase2Layout')
+
 @section('content')
+    @if (\Session:: has('success'))
+        <div class="alert alert-success">
+            <p>{{\Session::get('success')}}</p>
+        </div>
+    @endif
+
+    @if(Session::has('message'))
+        <div class="alert alert-success" id="res_message">
+            <p>{{ \Session::get('message') }}</p>
+        </div>
+    @endif
+    <form action = "/assignTeacher" method = "post">
+        @csrf
     <table class="table table-hover">
         <thead class="p1">
-        <thead class="p1">
+        <tr>
         <th scope="col">Course Code</th>
         <th scope="col">Course Title</th>
         <th scope="col">Semester</th>
@@ -18,7 +32,7 @@
         </tr>
         </thead>
 
-        @foreach($items as $item)
+        @foreach($items as $item,$teachers as $teacher)
             <tr>
                 <td>{{ $item->CourseCode }}</td>
                 <td>{{ $item->CourseTitle }}</td>
@@ -29,11 +43,15 @@
                 <td>{{ $item->Dept }}</td>
                 <td>{{ $item->No_of_Sec }}</td>
                 <td>{{ $item->No_of_Teachers }}</td>
-                <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="AssignTeacher" required></div></td>
-                <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="AssignLoad" required></div></td>
+
+                @foreach($teachers as $teacher )
+                    <td>{{ $teacher->assigned_teacher }}</td>
+                    <td>{{ $item->assigned_load }}</td>
+                @endforeach
                 <td><div class="form-group">
                         <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Submit </button></div></td>
                 @endforeach
             </tr>
     </table>
+    </form>
 @endsection

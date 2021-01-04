@@ -46,8 +46,8 @@
     </span>
 
     <span class="column Phase3">
-      <div><button class="buttons3 button6" onclick="window.location.href='/assignTeacher';">Assign Teachers</button></div>
-      <div><button class="buttons3 button7" onclick = "button7_open()">Reports</button></div>
+      <div><button class="buttons3 button6">Assign Teacher</button></div>
+      <div><button class="buttons3 button7" onclick = "button7_open()">Course Load</button></div>
     </span>
   </div>
 </div>
