@@ -31,8 +31,8 @@ Route::get('/home', function () {
 Route::get('/pdf', function (){
     $html = '<h1>Hello pDF</h1>';
     $pdf = PDF::loadHtml($html);
-    return $pdf->stream();
-    //return $pdf->downlaod('hello.pdf');
+    //return $pdf->stream();
+    return $pdf->downlaod('hello.pdf');
 });
 
 
