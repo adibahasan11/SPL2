@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\AddedCourses;
+use \PDF;
 
 class AddCoursesController extends Controller
 {
@@ -20,6 +21,18 @@ class AddCoursesController extends Controller
         $courses = DB::select('select * from added_courses');
         return view('Phase1.CourseList',['courses'=>$courses]);
     }
+
+
+
+    public function downloadPdf()
+    {
+        $pdf = PDF::loadView('Phase1.CourseList');
+        return $pdf->download('CourseList.pdf');
+    }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -101,8 +114,8 @@ class AddCoursesController extends Controller
         $ContactHour = $request->input('ContactHour');
         $E_ContactHour = $request->input('E_ContactHour');
 
-        DB::update('UPDATE added_courses 
-            SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=? 
+        DB::update('UPDATE added_courses
+            SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=?
             WHERE id = ?',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour, $id]);
         return redirect('/addcourse')->with('message' ,'Record updated successfully.');
     }

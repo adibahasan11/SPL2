@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AddCoursesController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddCoursesContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,14 @@ Route::get('/logout', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/pdf', function (){
+    $html = '<h1>Hello pDF</h1>';
+    $pdf = PDF::loadHtml($html);
+    return $pdf->stream();
+    //return $pdf->downlaod('hello.pdf');
+});
+
 
 //Route::resource('Phase1', 'AddCoursesController');
 

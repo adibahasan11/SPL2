@@ -5,7 +5,7 @@
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 
 @if(Session::has('message'))
@@ -13,6 +13,7 @@
   <p>{{ \Session::get('message') }}</p>
   </div>
 @endif
+<div class="col-md-5" align="right"><a href="{{url('dynamic_pdf/pdf')}}" class="btn btn-danger">Get Report</a></div>
 
 <form action = "/create" method = "post">
 	@csrf
@@ -50,7 +51,7 @@
 </tr>
  @endforeach
     <tr id="row1">
-      <td>{{ $course->id+1 }}</td>
+      <td>1</td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseCode" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseTitle" required></div</td>
       <td><div class="form-group">

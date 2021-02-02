@@ -5,7 +5,7 @@
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 @if(Session::has('message'))
   <div class="alert alert-success" id="res_message">
@@ -39,7 +39,7 @@
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Name" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Initials" required></div</td>
       <td><div class="form-group">
-        <select class="form-control" id="sel1" name="Designation" required>
+        <select class="form-control" id="sel1" name="Designations" required>
         <option>Professor</option>
         <option>Associate Professor</option>
         <option>Assistant Professor</option>
