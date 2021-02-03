@@ -4,6 +4,9 @@
 
 <table class="table table-hover">
   <thead class="p1">
+  {{--<div>
+      <a href="{{action('App\Http\Controllers\Auth\AddCoursesController@downloadPdf')}}">Download PDF</a>
+  </div>--}}
     <tr>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
@@ -19,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach ($courses ?? '' as $course)
+  @foreach ($courses as $course)
 <tr>
   <td>{{ $course->id }}</td>
   <td>{{ $course->CourseCode }}</td>
