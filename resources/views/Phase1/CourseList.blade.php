@@ -2,6 +2,9 @@
 
 @section('content')
 
+    <div class="col-md-11" align="right">
+        <a href="{{url('/pdf')}}" class="btn btn-danger">Get PDF report</a>
+    </div>
 <table class="table table-hover">
   <thead class="p1">
   {{--<div>
