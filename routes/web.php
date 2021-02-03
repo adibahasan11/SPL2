@@ -32,6 +32,8 @@ Route::get('/home', function () {
 
 Route::get('/pdf','App\Http\Controllers\AddCoursesController@downloadPdf');
 
+Route::get('/offeredpdf','App\Http\Controllers\OfferedCoursesContoller@downloadPDF');
+
 
 //Route::resource('Phase1', 'AddCoursesController');
 
