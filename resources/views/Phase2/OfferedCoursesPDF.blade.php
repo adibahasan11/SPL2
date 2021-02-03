@@ -34,7 +34,6 @@
         <th scope="col">Number of Sections</th>
         <th scope="col">Number of Teachers</th>
         <th scope="col">Loads</th>
-        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
