@@ -78,7 +78,7 @@ class AddTeacherController extends Controller
      */
     public function show($id)
     {
-        $teachers = DB::select('SELECT * FROM add_teachers WHERE id = ?',[$id]);
+        $teachers = DB::select('SELECT * FROM add_teachers WHERE Initials = ?',[$id]);
         return view('Phase1.UpdateTeacher',['teachers'=>$teachers]);
     }
 
@@ -88,7 +88,7 @@ class AddTeacherController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit(Request $request, $Initials)
     {
         $Name = $request->input('Name');
         $Initials = $request->input('Initials');
@@ -97,7 +97,7 @@ class AddTeacherController extends Controller
 
         DB::update('UPDATE add_teachers
             SET Name=?, Initials=?, Designations=?, IsActive=? 
-            WHERE id = ?',[$Name, $Initials, $Designations, $IsActive, $id]);
+            WHERE Initials = ?',[$Name, $Initials, $Designations, $IsActive, $Initials]);
         return redirect('/addteacher')->with('message' ,'Record updated successfully.');
     }
 

@@ -1777,6 +1777,7 @@ pre code {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
+  text-align: center;
 }
 
 .table th,
@@ -1801,12 +1802,16 @@ pre code {
 }
 
 .table-bordered {
+  border: 1px solid black;
+}
+
+.table-bordered-2 {
   border: 1px solid #dee2e6;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #dee2e6;
+  border: 1px solid black;
 }
 
 .table-bordered thead th,
@@ -1828,8 +1833,19 @@ pre code {
 .table-hover tbody tr:hover {
   color: #212529;
   background-color: rgba(0, 0, 0, 0.075);
+  text-align: center;
 }
 
+.table-holder{
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-bottom: 50px;
+}
+.table-holder-2{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+}
 .table-primary,
 .table-primary > th,
 .table-primary > td {
@@ -1845,11 +1861,13 @@ pre code {
 
 .table-hover .table-primary:hover {
   background-color: #b0d4f1;
+  text-align: center;
 }
 
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
   background-color: #b0d4f1;
+  text-align: center;
 }
 
 .table-secondary,
@@ -11057,7 +11075,14 @@ a{
   background-color: #4CAF50;
   opacity: 80%;
 }
-
+.p2{
+  background-color: transparent;
+  opacity: 60%;
+}
+.p3{
+  background-color: #4CAF50;
+  opacity: 80%;
+}
 .column {
   float: left;
   height: 100%;
@@ -11253,6 +11278,15 @@ a{
 .heading{
   color: #1A2930;
 }
-.total{
-  color: rgb(0, 0, 0);
+.summer{
+  text-align: center;
+  color: black;
+}
+.heading{
+  text-align: center;
+  color: black;
+}
+.warning{
+  color: red;
+  display: none;
 }

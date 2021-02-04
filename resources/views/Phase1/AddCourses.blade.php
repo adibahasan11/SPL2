@@ -13,7 +13,7 @@
   <p>{{ \Session::get('message') }}</p>
   </div>
 @endif
-
+<h4 class = "summer"><b>Summer Semester</b></h4>
 <form action = "/create" method = "post">
 	@csrf
 <table class="table table-hover">
@@ -50,7 +50,7 @@
 </tr>
  @endforeach
     <tr id="row1">
-      <td>{{ $course->id+1 }}</td>
+      <td>{{$course->id+1}}</td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseCode" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseTitle" required></div</td>
       <td><div class="form-group">
@@ -64,13 +64,9 @@
     </div></td>
       <td><div class="form-group">
         <select class="form-control" id="sel1" name="Sem" required>
-        <option>1</option>
         <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option>4</option>        
         <option>6</option>
-        <option>7</option>
         <option>8</option>
         </select>
     </div></td>

@@ -1,10 +1,10 @@
 @extends('Layouts.ReportsLayout')
 
 @section('content')
-
-<table class="table table-hover">
-  <thead class="p1">
-    <tr><th></th> <th></th>
+<div class = "table-holder">
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
     <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
       <th scope="col">Semester</th>
@@ -13,12 +13,11 @@
       <th scope="col">Number of Sections</th>
       <th scope="col">Number of Teachers</th>
       <th scope="col">Loads</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
   @foreach ($courses as $course)
-<tr><td></td> <td></td>
+<tr>
   <td>{{ $course->CourseCode }}</td>
   <td>{{ $course->CourseTitle }}</td>
   <td>{{ $course->Sem }}</td>
@@ -32,5 +31,5 @@
 
  </tbody>
 </table>
-
+</div>
 @endsection

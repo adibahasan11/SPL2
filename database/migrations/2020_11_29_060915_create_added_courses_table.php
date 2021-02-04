@@ -14,16 +14,17 @@ class CreateAddedCoursesTable extends Migration
     public function up()
     {
         Schema::create('added_courses', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
+            $table->primary('id');
             $table->string('CourseCode')->nullable();
             $table->string('CourseTitle')->unique();
             $table->string('Dept');
             $table->string('Sem');
             $table->string('CourseType');
             $table->string('Comp_Mand');
-            $table->string('Credit');
-            $table->string('ContactHour');
-            $table->string('E_ContactHour');
+            $table->integer('Credit');
+            $table->integer('ContactHour');
+            $table->integer('E_ContactHour');
             $table->timestamps();
         });
     }

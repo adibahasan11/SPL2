@@ -14,10 +14,11 @@ class CreateAddTeachersTable extends Migration
     public function up()
     {
         Schema::create('add_teachers', function (Blueprint $table) {
-            $table->id();
+            $table->string('Initials');
+            $table->primary('Initials');
             $table->string('Name');
-            $table->string('Initials')->unique();
             $table->string('Designations');
+            $table->integer('Loads_remaining')->nullable();
             $table->string('IsActive')->default('No');
             $table->timestamps();
         });

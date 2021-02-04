@@ -33,7 +33,7 @@ class OfferedCoursesContoller extends Controller
      */
     public function create()
     {
-        $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
+        $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId order by added_courses.Sem ASC');
         return view('Phase2.OfferedCourseList',['courses'=>$courses]);
     }
     public function summaryOfCourseLoad()
@@ -106,8 +106,8 @@ class OfferedCoursesContoller extends Controller
 
         DB::update('UPDATE offered_course 
         SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Loads=? 
-        WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $id]);
-        return  redirect('/offeredcourses') -> with('success', 'Course Updated Successfully');
+        WHERE OfferedCourseId = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $id]);
+        return  redirect('/AssignTeacher') -> with('success', 'Course Updated Successfully');
     }
 
     /**

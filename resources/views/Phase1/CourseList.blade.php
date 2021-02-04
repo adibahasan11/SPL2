@@ -1,8 +1,8 @@
 @extends('Layouts.ReportsLayout')
 
 @section('content')
-
-<table class="table table-hover">
+<div class = "table-holder">
+<table class="table table-hover table-bordered-2">
   <thead class="p1">
     <tr>
       <th scope="col">Serial</th>
@@ -15,7 +15,6 @@
       <th scope="col">Credit</th>
       <th scope="col">Contact Hour</th>
       <th scope="col">Effective Contact Hour</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -35,5 +34,5 @@
  @endforeach
  </tbody>
 </table>
-
+</div>
 @endsection

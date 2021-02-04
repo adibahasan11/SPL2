@@ -20,6 +20,7 @@
       <th scope="col">Full Name</th>
       <th scope="col">Initials</th>
       <th scope="col">Designation</th>
+      <th scope="col">Load Remaining</th>
       <th scope="col">Is Active?</th>
       <th scope="col"></th>
     </tr>
@@ -30,27 +31,28 @@
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
   <td>{{ $teacher->Designations }}</td>
+  <td>{{ $teacher->Loads_remaining }}</td>
   <td>{{ $teacher->IsActive }}</td>
   <td><div class="form-group">
-    <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->id }}'> Edit </a></div></td>
+    <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->Initials }}'> Edit </a></div></td>
 </tr>
  @endforeach
     <tr id="row1"><th></th><th></th>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Name" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Initials" required></div</td>
       <td><div class="form-group">
-        <select class="form-control" id="sel1" name="Designation" required>
+        <select class="form-control" id="sel1" name="Designations" required>
         <option>Professor</option>
         <option>Associate Professor</option>
         <option>Assistant Professor</option>
         <option>Lecturer</option>
         </select></div>
+        <td></td>
       <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Yes"> Yes </div>
       <div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="No"> No </div>
       </td>
       <td><div class="form-group">
       <button class="btn btn-primary btn-edit" id="edit"> Submit </button>
-      <button class="btn btn-primary btn-edit" style= "display:none" onclick = "Submit()" id="submit1"> Submit </button>
       <button class="btn btn-primary btn-edit" style= "display:none" onclick = "DeleteRow()" id="delete"> Delete </button>
       </div></td>
     </tr>

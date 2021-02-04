@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-        <form action = "/editTeacher/<?php echo $teachers[0]->id; ?>" method = "post">
+        <form action = "/editTeacher/<?php echo $teachers[0]->Initials; ?>" method = "post">
             <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
             <table  class="table table-hover">
                 <tr>
@@ -20,10 +20,27 @@
                     <td>Designation</td>
                     <td>
                     <select class="form-control" id="sel1" name = 'Designations' value = '<?php echo$teachers[0]->Designations; ?>'>
+                        @if ($teachers[0]->Designations === 'Professor') then
                         <option>Professor</option>
                         <option>Associate Professor</option>
                         <option>Assistant Professor</option>
                         <option>Lecturer</option>
+                        @elseif ($teachers[0]->Designations === 'Associate Professor') then
+                        <option>Associate Professor</option>
+                        <option>Professor</option>
+                        <option>Assistant Professor</option>
+                        <option>Lecturer</option>
+                        @elseif ($teachers[0]->Designations === 'Assistant Professor') then
+                        <option>Assistant Professor</option>
+                        <option>Professor</option>
+                        <option>Associate Professor</option>
+                        <option>Lecturer</option>
+                        @else
+                        <option>Lecturer</option>
+                        <option>Professor</option>
+                        <option>Associate Professor</option>
+                        <option>Assistant Professor</option>
+                        @endif
                     </select>
                     </td>
                 </tr>
@@ -34,8 +51,9 @@
                     <div><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'No'/> No</div>
                     </td>
                 </tr>
-                    <br><br>
-                    <td colspan = '2'>
+                    <br></br>
+                    <td></td>
+                    <td>
                     <input type = 'submit'class="btn btn-primary btn-edit" value = "Update" />
                     </td>
                 </tr>

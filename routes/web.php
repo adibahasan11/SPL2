@@ -42,8 +42,8 @@ Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');
 Route::get('addteacher','App\Http\Controllers\AddTeacherController@index');
 Route::post('createteacher','App\Http\Controllers\AddTeacherController@store');
 
-Route::get('editTeacher/{id}','App\Http\Controllers\AddTeacherController@show');
-Route::post('editTeacher/{id}','App\Http\Controllers\AddTeacherController@edit');
+Route::get('editTeacher/{Initials}','App\Http\Controllers\AddTeacherController@show');
+Route::post('editTeacher/{Initials}','App\Http\Controllers\AddTeacherController@edit');
 
 Route::get('TeacherList','App\Http\Controllers\AddTeacherController@create');
 
@@ -56,3 +56,12 @@ Route::post('OfferingCourse/{id}','App\Http\Controllers\OfferedCoursesContoller@
 
 Route::get('facultyRequirement','App\Http\Controllers\AddTeacherController@showCalculations');
 Route::get('SummaryCourseLoad','App\Http\Controllers\OfferedCoursesContoller@summaryOfCourseLoad');
+
+Route::get('AssignTeacher','App\Http\Controllers\AssignTeacherController@pageView');
+Route::post('AssignTeacher','App\Http\Controllers\AssignTeacherController@store');
+
+Route::get('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@show');
+Route::post('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@update');
+
+Route::get('ViewAssignTeacher','App\Http\Controllers\AssignTeacherController@index');
+Route::get('TeacherWiseReport','App\Http\Controllers\AssignTeacherController@viewTeacherWiseReport');

@@ -69,10 +69,12 @@
     @elseif ($course8->CourseType === 'Lab') then {{$lab8 = $lab8 + $course8->Loads}} 
     @endif
 @endforeach
-
-<table class="table table-hover">
-  <thead class="p1">
+<h4 class = "summer"><b>Summer Semester</b></h4>
+<div class = "table-holder">
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
     <tr>
+     
       <th scope="col">Department</th>
       <th scope="col">Semester</th>
       <th scope="col">Other Department</th>
@@ -81,11 +83,11 @@
       <th scope="col">Theory</th>
       <th scope="col">Lab</th>
       <th scope="col">Total</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
   <tr>
+  
     <td>CSE</td>
     <td>2</td>
     <td>{{ $otherDept2 }}</td>
@@ -137,5 +139,5 @@
 </tr>
   </tbody>
 </table>
-
+</div>
 @endsection

@@ -7,14 +7,14 @@
 @foreach ($sumOfLoads as $sumOfLoad)
 {{$result = $result + $sumOfLoad->Loads}}
 @endforeach
-<table class="table table-hover">
+<div class = "table-holder">
+<table class="table table-hover table-bordered">
   <thead class="p1">
     <tr>
       <th scope="col">Designation</th>
       <th scope="col">Offered Load</th>
       <th scope="col">Number of Available Teachers</th>
       <th scope="col">Total Load</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -47,31 +47,27 @@
 </tr>
  @endforeach
  <tr>
-    <td>Total Capacity</td>
+    <th>Total Capacity</th>
     <td></td>
-    <td></td>
-    <td>{{$i}}</td>
+    <th>{{$Professor + $AscProfessor + $AstProfessor + $Lecturer}}</th>
+    <th>{{$i}}</th>
  </tr>
  <tr>
-    <td>Total Load for Internal Teachers</td>
+    <th>Total Load for Internal Teachers</th>
     <td></td>
     <td></td>
-    <td>{{ $result }}</td>
+    <th>{{ $result }}</th>
  </tr>
  <tr>
-    <td>Deficit</td>
+    <th>Deficit</th>
     <td></td>
     <td></td>
-    <td>{{ $result - $i }}</td>
+    <th>{{ $result - $i }}</th>
  </tr>
  </tbody>
- <thead class="p1">
-    <tr>
-      <th scope="col">Required Faculties</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
+ <thead class="p2">
+    <tr> 
+      <th scope="col" colspan = 6 class= "heading"><b>Required Faculties</b></th>
     </tr>
   </thead>
   <thead class="p1">
@@ -80,7 +76,6 @@
       <th scope="col">Offered Load</th>
       <th scope="col">Number of Required Teachers</th>
       <th scope="col">Total Load</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -117,5 +112,5 @@
  </tr>
   </tbody>
 </table>
-
+</div>
 @endsection

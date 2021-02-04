@@ -29,7 +29,7 @@
   </div>
   <br>
     <a href="#" class="bar-item reports_button">Semester-Wise Course Load</a>
-    <a href="#" class="bar-item reports_button">Teacher-Wise Course Load</a>
+    <a href="TeacherWiseReport" class="bar-item reports_button">Teacher-Wise Course Load</a>
 </div>
 
 <div class= "main-part">
@@ -46,8 +46,8 @@
     </span>
 
     <span class="column Phase3">
-      <div><button class="buttons3 button6">Assign Teacher</button></div>
-      <div><button class="buttons3 button7" onclick = "button7_open()">Course Load</button></div>
+      <div><button class="buttons3 button6" onclick="window.location.href='/ViewAssignTeacher';">Assign Teacher</button></div>
+      <div><button class="buttons3 button7" onclick = "window.location.href='/TeacherWiseReport';">Teacher Wise Load</button></div>
     </span>
   </div>
 </div>

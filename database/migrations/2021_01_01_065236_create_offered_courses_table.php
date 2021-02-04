@@ -14,12 +14,14 @@ class CreateOfferedCoursesTable extends Migration
     public function up()
     {
         Schema::create('offered_course', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
             $table->unsignedBigInteger('OfferedCourseId');
+            $table->primary('OfferedCourseId');
             $table->string('IsOffered')->default('No');
             $table->integer('No_of_Sec')->nullable();
+            $table->integer('isAssigned')->nullable();
             $table->integer('No_of_Teachers')->nullable();
-            $table->integer('Load')->nullable();
+            $table->integer('Loads')->nullable();
             $table->timestamps();
         });
 
