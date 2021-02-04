@@ -17,7 +17,7 @@
 <tr>
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
-  <td>{{ $teacher->Designation }}</td>
+  <td>{{ $teacher->Designations }}</td>
   <td>{{ $teacher->IsActive }}</td>
 </tr>
  @endforeach
