@@ -65,3 +65,4 @@ Route::post('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherControll
 
 Route::get('ViewAssignTeacher','App\Http\Controllers\AssignTeacherController@index');
 Route::get('TeacherWiseReport','App\Http\Controllers\AssignTeacherController@viewTeacherWiseReport');
+

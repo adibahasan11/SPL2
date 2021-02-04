@@ -5,7 +5,7 @@
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 
 @if(Session::has('message'))
@@ -82,7 +82,7 @@
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="ContactHour" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="E_ContactHour" required></div></td>
       <td><div class="form-group">
-        <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Submit </button>
+              <button class="btn btn-primary btn-edit" onclick = "edit()" id="edit"> Submit </button></div></td>
         <!--<button class="btn btn-primary btn-edit" style= "display:none" onclick = "DeleteRow()" id="delete"> Delete </button></div></td>-->
     </tr>
   </tbody>
