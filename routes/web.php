@@ -36,7 +36,9 @@ Route::get('/offeredpdf','App\Http\Controllers\OfferedCoursesContoller@downloadP
 
 Route::get('/Teacherpdf','App\Http\Controllers\AddTeacherController@downloadPdf');
 
+Route::get('facultyRequirementpdf','App\Http\Controllers\AddTeacherController@downloadfacultyPDF');
 
+Route::get('/courseloadpdf','App\Http\Controllers\OfferedCoursesContoller@downloadcourseloadPDF');
 
 //Route::resource('Phase1', 'AddCoursesController');
 

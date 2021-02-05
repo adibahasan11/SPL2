@@ -36,6 +36,28 @@ class OfferedCoursesContoller extends Controller
         return $pdf->download('OfferedCourse.pdf');
     }
 
+    public function downloadcourseloadPDF()
+    {
+        $courses2 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 2');
+
+        $courses4 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 4');
+
+        $courses6 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 6');
+
+        $courses8 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
+
+        $vars = array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8);
+
+        $pdf = PDF::loadView('Phase2.SummaryCourseLoadPDF',['var'=>$vars]);
+
+        return $pdf->download('Course Load.pdf');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -59,6 +81,7 @@ class OfferedCoursesContoller extends Controller
 
         $courses8 = DB::select('select * from added_courses, offered_course
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
+
         return view('Phase2.SummaryCourseLoad')->with(array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8));
     }
 

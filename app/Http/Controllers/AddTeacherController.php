@@ -62,6 +62,25 @@ class AddTeacherController extends Controller
         return view('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
     }
 
+    public function downloadfacultyPDF()
+    {
+        $teachers = DB::select('select * from designation_loads order by Loads ASC');
+        $Professor = AddTeachers::where([
+            ['Designations', '=', 'Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AscProfessor = AddTeachers::where([
+            ['Designations', '=', 'Associate Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AstProfessor = AddTeachers::where([
+            ['Designations', '=', 'Assistant Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $Lecturer = AddTeachers::where([
+            ['Designations', '=', 'Lecturer'], ['IsActive', '=', 'Yes'] ])->count();
+
+        $sumOfLoads = DB::select('select Loads from offered_course');
+
+        $pdf = PDF::loadView('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+
+        return $pdf->download('Faculty Requirement.pdf');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
