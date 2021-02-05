@@ -13,7 +13,7 @@
   <p>{{ \Session::get('message') }}</p>
   </div>
 @endif
-<div class="col-md-5" align="right"><a href="{{url('dynamic_pdf/pdf')}}" class="btn btn-danger">Get Report</a></div>
+
 
 <form action = "/create" method = "post">
 	@csrf
