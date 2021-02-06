@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SPL2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPL2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/assignTeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase 3/assignTeacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/dist/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -172,6 +165,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nafiz\Desktop\Study\SPL2FINAL\iutcms1\SPL2\public\dist\img" />
+      <recent name="C:\Users\nafiz\Desktop\Study\SPL2FINAL\iutcms1\SPL2\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nafiz\Desktop\Study\SPL2FINAL\iutcms1\SPL2\resources\views\Layouts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -190,6 +192,8 @@
       <workItem from="1606587841751" duration="2404000" />
       <workItem from="1609647270593" duration="5742000" />
       <workItem from="1609771844110" duration="707000" />
+      <workItem from="1612590859220" duration="4026000" />
+      <workItem from="1612629296008" duration="2255000" />
     </task>
     <servers />
   </component>

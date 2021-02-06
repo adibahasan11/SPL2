@@ -1,4 +1,4 @@
-@extends('Phase1.Phase1Layout')
+@extends('layouts.admin')
 
 @section('content')
 

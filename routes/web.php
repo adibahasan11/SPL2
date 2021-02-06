@@ -25,6 +25,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/phaseOneView',function (){
+    return view('PhaseOneView');
+});
+
 //Route::resource('Phase1', 'AddCoursesController');
 
 Auth::routes();

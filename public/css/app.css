@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito); 
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 
 /*!
  * @charset "UTF-12";
@@ -582,11 +582,13 @@ pre code {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 @media (min-width: 576px) {
@@ -2675,11 +2677,11 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 .btn-edit {
-  width: 100px !important;  
+  width: 100px !important;
   height: 30px !important;
   font-size: 12px !important;
-  border: 2px solid #1A2930 !important; 
-  background-color:#C5C1C0 !important;  
+  border: 2px solid #1A2930 !important;
+  background-color:#C5C1C0 !important;
   color: #1A2930 !important;
 }
 
@@ -2689,20 +2691,20 @@ fieldset:disabled a.btn {
 
 .btn-edit:hover {
   border:#1A2930 !important;
-  background-color:#1A2930 !important;  
+  background-color:#1A2930 !important;
   color: #C5C1C0 !important;
   text-decoration: none;
 }
 
 .btn-primary {
-  width: 200px;  
-  height: 40px;    
+  width: 200px;
+  height: 40px;
   border-radius: 20px;
-  padding: 7px;  
+  padding: 7px;
   padding-top: 5px;
   font-size: 18px;
-  border: 2px solid #C5C1C0; 
-  background-color:#1A2930;  
+  border: 2px solid #C5C1C0;
+  background-color:#1A2930;
   color: #C5C1C0;
   align-self: center;
   transition-duration: 0.4s;
@@ -2712,7 +2714,7 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   border:#C5C1C0;
-  background-color:#C5C1C0;  
+  background-color:#C5C1C0;
   color: #1A2930;
   text-decoration: none;
 }
@@ -4992,17 +4994,17 @@ input[type=button].btn-block {
   border: 1px solid #1A2930;
   border-radius: 0.25rem;
 
-      
-    overflow: hidden;  
-    margin: auto;  
+
+    overflow: hidden;
+    margin: auto;
     margin: 20 0 0 450px;
-    padding-top: 10px;  
-    padding-bottom: 50px;  
-    background:#1A2930;  
-    border-radius: 25px ;  
+    padding-top: 10px;
+    padding-bottom: 50px;
+    background:#1A2930;
+    border-radius: 25px ;
     -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
     -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
-    box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);   
+    box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
 }
 
 .card > hr {
@@ -10971,23 +10973,23 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-body{  
-  margin: 0;  
-  padding: 0;  
+body{
+  margin: 0;
+  padding: 0;
   background-color: #C5C1C0;
-  font-family: 'Arial';  
-}  
-.login{  
-  width: 500px;  
-  overflow: hidden;  
-  margin: auto;  
-  margin: 20 0 0 450px;  
-  padding: 80px;  
-  background:#1A2930;  
-  border-radius: 25px ;  
+  font-family: 'Arial';
+}
+.login{
+  width: 500px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 80px;
+  background:#1A2930;
+  border-radius: 25px ;
   -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
   -moz-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
-  box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);   
+  box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
 }
 .button{
   text-align: center;
@@ -10998,54 +11000,54 @@ body{
 .forgot:hover{
   color: #dbdbb1;
   text-decoration: none;
-}  
-h2{  
-  text-align: center;  
-  color:#1A2930;  
-  padding: 20px;  
-}  
-label{  
-  color: #F7CE3E;  
+}
+h2{
+  text-align: center;
+  color:#1A2930;
+  padding: 20px;
+}
+label{
+  color: #F7CE3E;
   font-size: 17px;
   text-decoration: none;
-}  
-#Uname{  
-  width: 350px;  
-  height: 30px;  
-  border: none;  
-  border-radius: 10px;  
-  padding-left: 8px;  
-}  
-#Pass{  
-  width: 350px;  
-  height: 30px;  
-  border: none;  
-  border-radius: 10px;  
-  padding-left: 8px;  
-    
+}
+#Uname{
+  width: 350px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+#Pass{
+  width: 350px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 8px;
+
 }
 .login-button{
   text-align: center;
-}  
+}
 
-span{  
-  color: #F7CE3E;  
-  font-size: 17px;  
-}  
-a{  
+span{
+  color: #F7CE3E;
+  font-size: 17px;
+}
+a{
   float: center;
-  color: #F7CE3E;    
-}  
+  color: #F7CE3E;
+}
 .main-part{
   padding-top: 50px;
 }
 .p1-row{
   width: 1000px;
-  height: 500px;  
-  overflow: hidden;  
-  margin: auto;  
-  padding: 80px;   
-  background: #1A2930 ; 
+  height: 500px;
+  overflow: hidden;
+  margin: auto;
+  padding: 80px;
+  background: #1A2930 ;
   border-radius: 25px ;
   position: relative;
   -webkit-box-shadow: -1px 7px 28px -1px rgba(1,57,87,1);
@@ -11170,11 +11172,11 @@ a{
   }
 .row2{
   width: 300px;
-  height: 5px;  
-  overflow: hidden;  
-  margin: auto;  
+  height: 5px;
+  overflow: hidden;
+  margin: auto;
   padding: 80px;
-  float: center;  
+  float: center;
 }
 
 .bar-item{
