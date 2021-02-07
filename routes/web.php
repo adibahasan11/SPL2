@@ -28,7 +28,25 @@ Route::get('/home', function () {
 Route::get('/phaseOneView',function (){
     return view('PhaseOneView');
 });
+Route::get('/phaseTwoView',function (){
+    return view('PhaseTwoView');
+});
+Route::get('/phaseThreeView',function (){
+    return view('PhaseThreeView');
+});
 
+
+Route::get('/phaseOneReports',function (){
+    return view('PhaseOneReports');
+});
+
+Route::get('/phaseTwoReports',function (){
+    return view('PhaseTwoReports');
+});
+
+Route::get('/phaseThreeReports',function (){
+    return view('PhaseThreeReports');
+});
 //Route::resource('Phase1', 'AddCoursesController');
 
 Auth::routes();

@@ -1,11 +1,11 @@
-@extends('Phase2.Phase2Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 
 @if(Session::has('message'))
@@ -64,7 +64,7 @@
     </tr>
   </thead>
   <tbody>
-<th>Courses to be Offered</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   @foreach ($courses as $course)
 <tr><td></td> <td></td>
   <td>{{ $course->CourseCode }}</td>
@@ -81,7 +81,7 @@
   <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="No_of_Sec" required></div></td>
   <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="No_of_Teachers" required></div></td>
   <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Load" value= {{ $course->ContactHour }} required></div></td>-->
-  
+
   <td><div class="form-group"><a class="btn btn-primary btn-edit" id="edit" href ='OfferingCourse/{{ $course->id }}'> Offer </a></div></td>
 </tr>
  @endforeach

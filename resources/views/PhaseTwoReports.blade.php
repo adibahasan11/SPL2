@@ -6,11 +6,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Phase One</h1>
+                    <h1 class="m-0 text-dark">Phase Two</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Phases/Phase 1</li>
+                        <li class="breadcrumb-item active">Phase Reports/Phase 2</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,9 +28,9 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h2>Add courses</h2>
+                            <h2>List of offered courses</h2>
 
-                            <p>Add courses to database</p>
+                            <p>View Report of offered courses</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
@@ -43,9 +43,9 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h2>Add Teachers</h2>
+                            <h2>Course Load Summary</h2>
 
-                            <p>Add available Teachers</p>
+                            <p>View Summary of the course Load</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
@@ -58,9 +58,9 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h2>Report for lists</h2>
+                            <h2>Faculty Requirements</h2>
 
-                            <p>Get report for teachers and courses</p>
+                            <p>Calculate faculty requirements</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>

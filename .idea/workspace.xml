@@ -19,7 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="" />
+    <list default="true" id="a83c1e44-a5fb-4251-8a3c-ab88a7b80783" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/PhaseOneReports.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/PhaseThreeReports.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/PhaseThreeView.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/PhaseTwoReports.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/PhaseTwoView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase1/AddTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase1/AddTeacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourseList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Phase2/OfferedCourses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/PhaseOneview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/PhaseOneview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +206,8 @@
       <workItem from="1609647270593" duration="5742000" />
       <workItem from="1609771844110" duration="707000" />
       <workItem from="1612590859220" duration="4026000" />
-      <workItem from="1612629296008" duration="2255000" />
+      <workItem from="1612629296008" duration="2357000" />
+      <workItem from="1612711766877" duration="3711000" />
     </task>
     <servers />
   </component>

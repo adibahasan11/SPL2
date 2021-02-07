@@ -1,11 +1,11 @@
-@extends('Phase1.Phase1Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 @if(Session::has('message'))
   <div class="alert alert-success" id="res_message">

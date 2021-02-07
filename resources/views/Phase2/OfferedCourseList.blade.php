@@ -1,4 +1,4 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
 

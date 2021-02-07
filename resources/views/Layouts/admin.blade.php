@@ -96,13 +96,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/UI/icons.html" class="nav-link">
+                                <a href="phaseTwoView" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Phase 2</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/UI/buttons.html" class="nav-link">
+                                <a href="/phaseThreeView" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Phase 3</p>
                                 </a>
@@ -117,19 +117,19 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/UI/general.html" class="nav-link">
+                                        <a href="/phaseOneReports" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Phase 1 report</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/UI/icons.html" class="nav-link">
+                                        <a href="/phaseTwoReports" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Phase 2 Report</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/UI/buttons.html" class="nav-link">
+                                        <a href="/phaseThreeReports" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Phase 3 Report</p>
                                         </a>
