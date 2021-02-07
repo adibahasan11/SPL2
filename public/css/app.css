@@ -11286,6 +11286,10 @@ a{
   text-align: center;
   color: black;
 }
+.heading_text{
+  
+  color: black;
+}
 .warning{
   color: red;
   display: none;

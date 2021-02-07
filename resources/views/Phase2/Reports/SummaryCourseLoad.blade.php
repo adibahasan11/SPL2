@@ -26,51 +26,58 @@
 @php ($theory8 = 0)
 @php ($lab8 = 0)
 
-@foreach ($courses2 as $course2)
-    @if($course2->Dept === 'CSE') then {{$fulltime2 = $fulltime2 + $course2->Loads}}
-    @elseif($course2->Dept === 'CSE(Part-time)') then {{$ptime2 = $ptime2 + $course2->Loads }}
-    @else {{$otherDept2 = $otherDept2 + $course2->Loads}}
-    @endif  
+@foreach ($courses as $course)
+
+    @if ($course->Sem === "2") 
+        @if($course->Dept === 'CSE')  @php($fulltime2 = $fulltime2 + $course->Loads)
+        @elseif($course->Dept === 'CSE(Part-time)')  @php($ptime2 = $ptime2 + $course->Loads)
+        @else {{$otherDept2 = $otherDept2 + $course->Loads}}
+        @endif  
     
-    @if ($course2->CourseType === 'Theory') then {{$theory2 = $theory2 + $course2->Loads}}
-    @elseif ($course2->CourseType === 'Lab') then {{$lab2 = $lab2 + $course2->Loads}} 
+        @if ($course->CourseType === 'Theory')  @php($theory2 = $theory2 + $course->Loads)
+        @elseif ($course->CourseType === 'Lab')  @php($lab2 = $lab2 + $course->Loads) 
+        @endif
+
+    @elseif ($course->Sem === "4") 
+        @if($course->Dept === 'CSE')  @php($fulltime4 = $fulltime4 + $course->Loads)
+        @elseif($course->Dept === 'CSE(Part-time)')  @php($ptime4 = $ptime4 + $course->Loads)
+        @else @php($otherDept4 = $otherDept4 + $course->Loads)
+        @endif  
+    
+        @if ($course->CourseType === 'Theory')  @php($theory4 = $theory4 + $course->Loads)
+        @elseif ($course->CourseType === 'Lab')  @php($lab4 = $lab4 + $course->Loads)
+        @endif
+
+    @elseif ($course->Sem === "6") 
+        @if($course->Dept === 'CSE')  @php($fulltime6 = $fulltime6 + $course->Loads)
+        @elseif($course->Dept === 'CSE(Part-time)')  ($ptime6 = $ptime6 + $course->Loads)
+        @else @php($otherDept6 = $otherDept6 + $course->Loads)
+        @endif  
+    
+        @if ($course->CourseType === 'Theory')  @php($theory6 = $theory6 + $course->Loads)
+        @elseif ($course->CourseType === 'Lab')  @php($lab6 = $lab6 + $course->Loads)
+        @endif
+
+    @else
+        @if($course->Dept === 'CSE')  @php($fulltime8 = $fulltime8 + $course->Loads)
+        @elseif($course->Dept === 'CSE(Part-time)')  @php($ptime8 = $ptime8 + $course->Loads)
+        @else @php($otherDept8 = $otherDept8 + $course->Loads)
+        @endif  
+    
+        @if ($course->CourseType === 'Theory')  @php($theory8 = $theory8 + $course->Loads)
+        @elseif ($course->CourseType === 'Lab')  @php($lab8 = $lab8 + $course->Loads)
+        @endif
+
     @endif
+
 @endforeach
 
-@foreach ($courses4 as $course4)
-    @if($course4->Dept === 'CSE') then {{$fulltime4 = $fulltime4 + $course4->Loads}}
-    @elseif($course4->Dept === 'CSE(Part-time)') then {{$ptime4 = $ptime4 + $course4->Loads }}
-    @else {{$otherDept4 = $otherDept4 + $course4->Loads}}
-    @endif  
-    
-    @if ($course4->CourseType === 'Theory') then {{$theory4 = $theory4 + $course4->Loads}}
-    @elseif ($course4->CourseType === 'Lab') then {{$lab4 = $lab4 + $course4->Loads}} 
-    @endif
-@endforeach
-
-@foreach ($courses6 as $course6)
-    @if($course6->Dept === 'CSE') then {{$fulltime6 = $fulltime6 + $course6->Loads}}
-    @elseif($course6->Dept === 'CSE(Part-time)') then {{$ptime6 = $ptime6 + $course6->Loads }}
-    @else {{$otherDept6 = $otherDept6 + $course6->Loads}}
-    @endif  
-    
-    @if ($course6->CourseType === 'Theory') then {{$theory6 = $theory6 + $course6->Loads}}
-    @elseif ($course6->CourseType === 'Lab') then {{$lab6 = $lab6 + $course6->Loads}} 
-    @endif
-@endforeach
-
-@foreach ($courses8 as $course8)
-    @if($course8->Dept === 'CSE') then {{$fulltime8 = $fulltime8 + $course8->Loads}}
-    @elseif($course8->Dept === 'CSE(Part-time)') then {{$ptime8 = $ptime8 + $course8->Loads }}
-    @else {{$otherDept8 = $otherDept8 + $course8->Loads}}
-    @endif  
-    
-    @if ($course8->CourseType === 'Theory') then {{$theory8 = $theory8 + $course8->Loads}}
-    @elseif ($course8->CourseType === 'Lab') then {{$lab8 = $lab8 + $course8->Loads}} 
-    @endif
-@endforeach
+<h4 class = "summer"><b>Summary Of CourseLoad</b></h4>
 <h4 class = "summer"><b>Summer Semester</b></h4>
 <div class = "table-holder">
+<div  align="right">
+        <a href="{{url('/SummeryCoursePDF')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
+</div><br>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
     <tr>

@@ -1,4 +1,4 @@
-@extends('Phase3.Phase3Layout')
+@extends('Phase3.AssignTeacherLayout')
 
 @section('content')
 

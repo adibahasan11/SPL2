@@ -2,7 +2,11 @@
 
 @section('content')
 <div class = "table-holder">
-<table class="table table-hover table-bordered-2">
+<div  align="right">
+        <a href="{{url('/CourseListpdf')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
+</div>
+<br>
+<table class="table table-hover">
   <thead class="p1">
     <tr>
       <th scope="col">Serial</th>

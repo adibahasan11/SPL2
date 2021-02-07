@@ -2,6 +2,9 @@
 
 @section('content')
 <div class = "table-holder">
+<div  align="right">
+        <a href="{{url('/offeredpdf')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
+</div><br>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
     <tr>

@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\AddTeachers;
+use PDF;
 
 class AddTeacherController extends Controller
 {
@@ -32,6 +33,14 @@ class AddTeacherController extends Controller
         return view('Phase1.TeacherList',['teachers'=>$teachers]);
     }
 
+    public function downloadPDF()
+    {
+        $teachers = DB::select('select * from add_teachers');
+        $pdf = PDF::loadView('Phase1.TeacherListPDF', ['teachers'=>$teachers]);
+
+        return $pdf->download('Teacher List.pdf');
+    }
+
     public function showCalculations()
     {
         $teachers = DB::select('select * from designation_loads order by Loads ASC');
@@ -49,7 +58,26 @@ class AddTeacherController extends Controller
                // ->select(DB::raw('SUM(Loads) as Loads'))
                 //->get();
 
-        return view('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+        return view('Phase2.Reports.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+    }
+
+    public function getFacultyRequirementPDF()
+    {
+        $teachers = DB::select('select * from designation_loads order by Loads ASC');
+        $Professor = AddTeachers::where([
+            ['Designations', '=', 'Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AscProfessor = AddTeachers::where([
+            ['Designations', '=', 'Associate Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AstProfessor = AddTeachers::where([
+            ['Designations', '=', 'Assistant Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $Lecturer = AddTeachers::where([
+            ['Designations', '=', 'Lecturer'], ['IsActive', '=', 'Yes'] ])->count();
+
+        $sumOfLoads = DB::select('select Loads from offered_course');
+
+        $pdf = PDF::loadView('Phase2.ReportsPDF.FacultyRequirementPDF', compact(['teachers', 'Professor', 'AscProfessor', 'AstProfessor', 'Lecturer', 'sumOfLoads']));
+        
+        return $pdf->download('Faculty Rquirement Calculations.pdf');
     }
 
     /**

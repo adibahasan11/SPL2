@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\OfferedCourses;
+use PDF;
 
 class OfferedCoursesContoller extends Controller
 {
@@ -18,12 +19,9 @@ class OfferedCoursesContoller extends Controller
     public function index()
     {
         $offeredcourses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered"');
-        //return view('Phase2.OfferedCourses',['offeredcourses'=>$offeredcourses]);
-
         $courses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "No"');
-        //return view('Phase2.OfferedCourses',['courses'=>$courses]);
 
-        return view('Phase2.OfferedCourses')->with(array('offeredcourses'=>$offeredcourses,'courses'=>$courses));
+        return view('Phase2.OfferCourse.OfferedCourses')->with(array('offeredcourses'=>$offeredcourses,'courses'=>$courses));
     }
 
     /**
@@ -34,22 +32,35 @@ class OfferedCoursesContoller extends Controller
     public function create()
     {
         $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId order by added_courses.Sem ASC');
-        return view('Phase2.OfferedCourseList',['courses'=>$courses]);
+        return view('Phase2.Reports.OfferedCourseList',['courses'=>$courses]);
     }
     public function summaryOfCourseLoad()
     {
-        $courses2 = DB::select('select * from added_courses, offered_course 
-        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 2');
+        $courses = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
 
-        $courses4 = DB::select('select * from added_courses, offered_course 
+        /*$courses4 = DB::select('select * from added_courses, offered_course 
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 4');
 
         $courses6 = DB::select('select * from added_courses, offered_course 
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 6');
 
         $courses8 = DB::select('select * from added_courses, offered_course 
-        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
-        return view('Phase2.SummaryCourseLoad')->with(array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8));
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');*/
+
+        return view('Phase2.Reports.SummaryCourseLoad',['courses'=>$courses]);
+        //return view('Phase2.SummaryCourseLoad')->with(array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8));
+    }
+
+    public function downloadSummaryOfCourseLoad()
+    {
+        $courses = DB::select('select * from added_courses, offered_course 
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
+        
+        $pdf = PDF::loadView('Phase2.ReportsPDF.SummaryCourseLoadPDF',['courses'=>$courses]);
+
+        return $pdf->download('Summery Of Course Load.pdf');
+        //return view('Phase2.SummaryCourseLoad',['courses'=>$courses]);
     }
 
     /**
@@ -76,7 +87,16 @@ class OfferedCoursesContoller extends Controller
                                 WHERE added_courses.id = offered_course.OfferedCourseId
                                 AND added_courses.id = ?',[$id]);
 
-        return view('Phase2.OfferingCourse',['courses'=>$courses]);
+        return view('Phase2.OfferCourse.OfferingCourse',['courses'=>$courses]);
+    }
+
+    public function downloadPDF()
+    {
+        $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
+
+        $pdf = PDF::loadView('Phase2.ReportsPDF.OfferedCoursesPDF',['courses'=>$courses]);
+
+        return $pdf->download('OfferedCourse.pdf');
     }
 
     /**

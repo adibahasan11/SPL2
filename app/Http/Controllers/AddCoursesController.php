@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\AddedCourses;
+use App\Models\AddedCourses;
+use PDF;
 
 class AddCoursesController extends Controller
 {
@@ -26,6 +27,14 @@ class AddCoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function downloadPdf()
+    {
+        $courses = AddedCourses::all();
+        $pdf = PDF::loadView('Phase1.CoursePDF',compact('courses'));
+        return $pdf->stream('CourseList.pdf');
+    }
+
     public function create()
     {
         $courses = DB::select('select * from added_courses');

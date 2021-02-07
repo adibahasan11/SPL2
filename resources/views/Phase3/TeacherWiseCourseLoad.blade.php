@@ -4,7 +4,9 @@
 
 <h4 class = "summer"><b>Summer Semester</b></h4>
 <h4 class = "summer"><b>Teacher-Wise Load Distribution</b></h4>
-
+<div class="table-holder"><div  align="right">
+        <a href="{{url('/TeacherWiseReportPDF')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
+</div></div><br>
 @foreach($teachers as $teacher)
 @php ($theory = 0)
 @php ($lab = 0)
