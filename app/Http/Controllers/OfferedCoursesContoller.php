@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\OfferedCourses;
+use \PDF;
 
 class OfferedCoursesContoller extends Controller
 {
@@ -26,6 +27,37 @@ class OfferedCoursesContoller extends Controller
         return view('Phase2.OfferedCourses')->with(array('offeredcourses'=>$offeredcourses,'courses'=>$courses));
     }
 
+    public function downloadPDF()
+    {
+        $courses = DB::select('select * from added_courses, offered_course where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId');
+
+        $pdf = PDF::loadView('Phase2.OfferedCoursesPDF',['courses'=>$courses]);
+
+        return $pdf->download('OfferedCourse.pdf');
+    }
+
+    public function downloadcourseloadPDF()
+    {
+        $courses2 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 2');
+
+        $courses4 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 4');
+
+        $courses6 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 6');
+
+        $courses8 = DB::select('select * from added_courses, offered_course
+        where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
+
+        $vars = array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8);
+
+        $pdf = PDF::loadView('Phase2.SummaryCourseLoadPDF',['var'=>$vars]);
+
+        return $pdf->download('Course Load.pdf');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,17 +70,18 @@ class OfferedCoursesContoller extends Controller
     }
     public function summaryOfCourseLoad()
     {
-        $courses2 = DB::select('select * from added_courses, offered_course 
+        $courses2 = DB::select('select * from added_courses, offered_course
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 2');
 
-        $courses4 = DB::select('select * from added_courses, offered_course 
+        $courses4 = DB::select('select * from added_courses, offered_course
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 4');
 
-        $courses6 = DB::select('select * from added_courses, offered_course 
+        $courses6 = DB::select('select * from added_courses, offered_course
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 6');
 
-        $courses8 = DB::select('select * from added_courses, offered_course 
+        $courses8 = DB::select('select * from added_courses, offered_course
         where offered_course.IsOffered = "Offered" and added_courses.id = offered_course.OfferedCourseId and sem = 8');
+
         return view('Phase2.SummaryCourseLoad')->with(array('courses2'=>$courses2,'courses4'=>$courses4,'courses6'=>$courses6,'courses8'=>$courses8));
     }
 
@@ -71,8 +104,8 @@ class OfferedCoursesContoller extends Controller
      */
     public function show($id)
     {
-        $courses = DB::select('SELECT * 
-                                FROM added_courses, offered_course 
+        $courses = DB::select('SELECT *
+                                FROM added_courses, offered_course
                                 WHERE added_courses.id = offered_course.OfferedCourseId
                                 AND added_courses.id = ?',[$id]);
 
@@ -104,8 +137,8 @@ class OfferedCoursesContoller extends Controller
         $No_of_Teachers = $request->input('No_of_Teachers');
         $Load = $request->input('Loads');
 
-        DB::update('UPDATE offered_course 
-        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Loads=? 
+        DB::update('UPDATE offered_course
+        SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Loads=?
         WHERE id = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $id]);
         return  redirect('/offeredcourses') -> with('success', 'Course Updated Successfully');
     }

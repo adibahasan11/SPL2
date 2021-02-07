@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\AddCoursesController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddCoursesContoller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +29,16 @@ Route::get('/logout', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/pdf','App\Http\Controllers\AddCoursesController@downloadPdf');
+
+Route::get('/offeredpdf','App\Http\Controllers\OfferedCoursesContoller@downloadPDF');
+
+Route::get('/Teacherpdf','App\Http\Controllers\AddTeacherController@downloadPdf');
+
+Route::get('facultyRequirementpdf','App\Http\Controllers\AddTeacherController@downloadfacultyPDF');
+
+Route::get('/courseloadpdf','App\Http\Controllers\OfferedCoursesContoller@downloadcourseloadPDF');
 
 //Route::resource('Phase1', 'AddCoursesController');
 

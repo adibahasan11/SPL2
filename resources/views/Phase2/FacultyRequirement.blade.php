@@ -87,10 +87,10 @@
   <tr>
     <td>Lecturer</td>
     <td>{{ $teachers[3]->Loads }}</td>
-    @if ( $result - $i < 0 ) then 
+    @if ( $result - $i < 0 ) then
         <td>0</td>
         <td>0</td>
-    @else 
+    @else
         <td>{{ ceil(($result - $i)/$teachers[3]->Loads) }}</td>
         <td>{{ $teachers[3]->Loads*ceil(($result - $i)/$teachers[3]->Loads) }}</td>
     @endif
@@ -99,9 +99,9 @@
     <td>Total Capacity</td>
     <td></td>
     <td></td>
-    @if ( $result - $i < 0 ) then 
+    @if ( $result - $i < 0 ) then
         <td>0</td>
-    @else 
+    @else
         <td>{{ $teachers[3]->Loads*ceil(($result - $i)/$teachers[3]->Loads) }}</td>
     @endif
  </tr>
@@ -109,9 +109,9 @@
     <td>Deficit After Recruitment</td>
     <td></td>
     <td></td>
-    @if ( $result - $i < 0 ) then 
+    @if ( $result - $i < 0 ) then
         <td>0</td>
-    @else 
+    @else
         <td>{{ ($result - $i) - ($teachers[3]->Loads*ceil(($result - $i)/$teachers[3]->Loads)) }}</td>
     @endif
  </tr>

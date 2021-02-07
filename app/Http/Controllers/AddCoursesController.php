@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AddedCourses;
 use Illuminate\Http\Request;
-use DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\AddedCourses;
+use Illuminate\Support\Facades\DB;
+use \PDF;
 
 class AddCoursesController extends Controller
 {
@@ -17,9 +19,22 @@ class AddCoursesController extends Controller
      */
     public function index()
     {
-        $courses = DB::select('select * from added_courses');
-        return view('Phase1.CourseList',['courses'=>$courses]);
+        $courses = AddedCourses::all();
+        return view('Phase1.CourseList', compact('courses'));
     }
+
+
+
+    public function downloadPdf()
+    {
+        $courses = AddedCourses::all();
+        $pdf = PDF::loadView('Phase1.CoursePDF',compact('courses'));
+        return $pdf->stream('CourseList.pdf');
+    }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -56,7 +71,7 @@ class AddCoursesController extends Controller
 
     public function store(Request $request)
     {
-        $CourseCode = $request->input('CourseCode');
+        /*$CourseCode = $request->input('CourseCode');
         $CourseTitle = $request->input('CourseTitle');
         $Dept = $request->input('Dept');
         $Sem = $request->input('Sem');
@@ -64,9 +79,22 @@ class AddCoursesController extends Controller
         $Comp_Mand = $request->input('Comp_Mand');
         $Credit = $request->input('Credit');
         $ContactHour = $request->input('ContactHour');
-        $E_ContactHour = $request->input('E_ContactHour');
+        $E_ContactHour = $request->input('E_ContactHour');*/
 
-        DB::insert('insert into added_courses (CourseCode, CourseTitle, Dept, Sem, CourseType, Comp_Mand, Credit, ContactHour, E_ContactHour) values(?, ?, ?, ?, ?, ?, ?, ?, ?)',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour]);
+        $validatedData = $request->validate([
+            'CourseCode' => 'required|max:255',
+            'CourseTitle' => 'required|max:255',
+            'Dept' => 'required|max:255',
+            'Sem' => 'required|max:255',
+            'CourseType' => 'required|max:255',
+            'Comp_Mand' => 'required|max:255',
+            'Credit' => 'required|max:255',
+            'ContactHour' => 'required|max:255',
+            'E_ContactHour' => 'required|max:255',
+        ]);
+        AddedCourses::create($validatedData);
+
+        //DB::insert('insert into added_courses (CourseCode, CourseTitle, Dept, Sem, CourseType, Comp_Mand, Credit, ContactHour, E_ContactHour) values(?, ?, ?, ?, ?, ?, ?, ?, ?)',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour]);
 
         return  redirect('/addcourse') -> with('success', 'Data Added');
     }
@@ -101,8 +129,8 @@ class AddCoursesController extends Controller
         $ContactHour = $request->input('ContactHour');
         $E_ContactHour = $request->input('E_ContactHour');
 
-        DB::update('UPDATE added_courses 
-            SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=? 
+        DB::update('UPDATE added_courses
+            SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=?
             WHERE id = ?',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour, $id]);
         return redirect('/addcourse')->with('message' ,'Record updated successfully.');
     }

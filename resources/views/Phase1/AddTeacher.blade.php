@@ -5,7 +5,7 @@
 @if (\Session:: has('success'))
 <div class="alert alert-success">
   <p>{{\Session::get('success')}}</p>
-</div> 
+</div>
 @endif
 @if(Session::has('message'))
   <div class="alert alert-success" id="res_message">
@@ -32,14 +32,14 @@
   <td>{{ $teacher->Designations }}</td>
   <td>{{ $teacher->IsActive }}</td>
   <td><div class="form-group">
-    <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->id }}'> Edit </a></div></td>
+    <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->Initials }}'> Edit </a></div></td>
 </tr>
  @endforeach
     <tr id="row1"><th></th><th></th>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Name" required></div></td>
       <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="Initials" required></div</td>
       <td><div class="form-group">
-        <select class="form-control" id="sel1" name="Designation" required>
+        <select class="form-control" id="sel1" name="Designations" required>
         <option>Professor</option>
         <option>Associate Professor</option>
         <option>Assistant Professor</option>

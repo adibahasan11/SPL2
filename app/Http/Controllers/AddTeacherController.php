@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\AddTeachers;
+use \PDF;
 
 class AddTeacherController extends Controller
 {
@@ -32,6 +33,15 @@ class AddTeacherController extends Controller
         return view('Phase1.TeacherList',['teachers'=>$teachers]);
     }
 
+    public function downloadPdf()
+    {
+        $teachers = DB::select('select * from add_teachers');
+
+        $pdf = PDF::loadView('Phase1.TeacherListPDF',['teachers'=>$teachers]);
+
+        return $pdf->download('Teacher List.pdf');
+    }
+
     public function showCalculations()
     {
         $teachers = DB::select('select * from designation_loads order by Loads ASC');
@@ -50,6 +60,25 @@ class AddTeacherController extends Controller
                 //->get();
 
         return view('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+    }
+
+    public function downloadfacultyPDF()
+    {
+        $teachers = DB::select('select * from designation_loads order by Loads ASC');
+        $Professor = AddTeachers::where([
+            ['Designations', '=', 'Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AscProfessor = AddTeachers::where([
+            ['Designations', '=', 'Associate Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $AstProfessor = AddTeachers::where([
+            ['Designations', '=', 'Assistant Professor'], ['IsActive', '=', 'Yes'] ])->count();
+        $Lecturer = AddTeachers::where([
+            ['Designations', '=', 'Lecturer'], ['IsActive', '=', 'Yes'] ])->count();
+
+        $sumOfLoads = DB::select('select Loads from offered_course');
+
+        $pdf = PDF::loadView('Phase2.FacultyRequirement')->with(array('teachers'=>$teachers,'Professor'=>$Professor,'AscProfessor'=>$AscProfessor,'AstProfessor'=>$AstProfessor,'Lecturer'=>$Lecturer,'sumOfLoads'=>$sumOfLoads));
+
+        return $pdf->download('Faculty Requirement.pdf');
     }
 
     /**
@@ -96,8 +125,8 @@ class AddTeacherController extends Controller
         $IsActive = $request->input('IsActive');
 
         DB::update('UPDATE add_teachers
-            SET Name=?, Initials=?, Designations=?, IsActive=? 
-            WHERE id = ?',[$Name, $Initials, $Designations, $IsActive, $id]);
+            SET Name=?, Initials=?, Designations=?, IsActive=?
+            WHERE Initials = ?',[$Name, $Initials, $Designations, $IsActive, $id]);
         return redirect('/addteacher')->with('message' ,'Record updated successfully.');
     }
 

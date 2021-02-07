@@ -1,6 +1,9 @@
 @extends('Layouts.ReportsLayout')
 
 @section('content')
+    <div class="col-md-11" align="right">
+        <a href="{{url('/Teacherpdf')}}" class="btn btn-danger">Get PDF report</a>
+    </div>
 
 <table class="table table-hover">
   <thead class="p1">
@@ -17,7 +20,7 @@
 <tr>
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
-  <td>{{ $teacher->Designation }}</td>
+  <td>{{ $teacher->Designations }}</td>
   <td>{{ $teacher->IsActive }}</td>
 </tr>
  @endforeach
