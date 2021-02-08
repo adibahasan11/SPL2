@@ -1,4 +1,4 @@
-@extends('Phase3.Phase3Layout')
+@extends('Layouts.admin')
 
 @section('content')
 <div class="container">

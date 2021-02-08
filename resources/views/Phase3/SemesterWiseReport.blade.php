@@ -1,4 +1,4 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -8,10 +8,10 @@
         <a href="{{url('/SemesterWiseReportPDF')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
 </div></div><br>
 @for($i = 2; $i<=8; $i+=2)
-<div class="table-holder">
+<div class="table-holder-3">
 <h4 class = "heading_text">Semester {{$i}}</h4><br>
 <table class="table table-hover table-bordered">
-  <thead class="thead-dark">
+  <thead class="thead-dark-2">
     <tr>
       <th scope="col"><b>Course Code</b></th>
       <th scope="col"><b>Course Title</b></th>

@@ -25,6 +25,28 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/phaseOneView',function (){
+    return view('PhaseViews.PhaseOneView');
+});
+Route::get('/phaseTwoView',function (){
+    return view('PhaseViews.PhaseTwoView');
+});
+Route::get('/phaseThreeView',function (){
+    return view('PhaseViews.PhaseThreeView');
+});
+
+Route::get('/phaseOneReports',function (){
+    return view('PhaseReportViews.PhaseOneReports');
+});
+
+Route::get('/phaseTwoReports',function (){
+    return view('PhaseReportViews.PhaseTwoReports');
+});
+
+Route::get('/phaseThreeReports',function (){
+    return view('PhaseReportViews.PhaseThreeReports');
+});
+
 //Route::resource('Phase1', 'AddCoursesController');
 
 Auth::routes();
@@ -62,8 +84,8 @@ Route::get('/facultyRequirementPDF','App\Http\Controllers\AddTeacherController@g
 Route::get('SummaryCourseLoad','App\Http\Controllers\OfferedCoursesContoller@summaryOfCourseLoad');
 Route::get('/SummeryCoursePDF','App\Http\Controllers\OfferedCoursesContoller@downloadSummaryOfCourseLoad');
 
-Route::get('AssignTeacher','App\Http\Controllers\AssignTeacherController@pageView');
-Route::post('AssignTeacher','App\Http\Controllers\AssignTeacherController@store');
+Route::get('AssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@pageView');
+Route::post('AssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@store');
 
 Route::get('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@show');
 Route::post('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@update');

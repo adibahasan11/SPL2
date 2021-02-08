@@ -14,9 +14,9 @@ use App\Models\AssignTeacher;
 
 class assignTeacherController extends Controller
 {
-    public function pageView(){
+    public function pageView($id){
         $offeredcourses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 0 
-                                       ');
+                                       and added_courses.id = ?',[$id]);
         $offeredcourses_assigned = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 1 ');
         $assignedteachers = DB::select('select * from assign_teachers');
         $teachers = DB::select('select * from add_teachers where IsActive = "Yes" and Loads_remaining > 0');
@@ -24,17 +24,19 @@ class assignTeacherController extends Controller
         return view('Phase3.AssignTeacher')->with(array('offeredcourses'=>$offeredcourses, 'offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         //$CourseId = $request->input('OfferedCourseId');
         foreach($request->Loads as $key => $v){
+            //@if ($request->Initials[$key] != null)
             $data = array ('OfferedCourseId'=> $request->OfferedCourseId,
                             'OfferedCourseCode' => $request->CourseCode,
                             'Initials' => $request->Initials[$key],
                             'Loads' => $request->Loads[$key] );
             AssignTeacher::insert($data);
+            
         }
-        return  redirect('/AssignTeacher')-> with('success', 'Data Added');
+        return  redirect('/ViewAssignTeacher')-> with('success', 'Data Added');
     }
 
     public function show($id)

@@ -1,4 +1,4 @@
-@extends('Phase3.AssignTeacherLayout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -20,9 +20,9 @@
 <h4 class = "summer"><b>Summer Semester</b></h4>
 <form action = "AssignTeacher" method = "post">
 	@csrf
-  <h5 class = "summer"><b>Courses assigned with Teachers</b></h5>
+  <--<h5 class = "summer"><b>Courses assigned with Teachers</b></h5>
   <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark-2">
     <tr><td></td><td></td>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
@@ -70,7 +70,7 @@
 
 <h5 class = "summer"><b>Courses not assigned Teachers</b></h5>
 <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark-2">
     <tr><td></td><td></td>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
@@ -103,6 +103,7 @@
   @for ($i = 1; $i <= $a_teacher; ++$i)
     <div class="form-group">
             <select class="form-control" id="sel1" name="Initials[]" required>
+              <!--<option> </option>-->
             @foreach($teachers as $teacher)
             <option>{{$teacher->Initials}}</option>
             @endforeach

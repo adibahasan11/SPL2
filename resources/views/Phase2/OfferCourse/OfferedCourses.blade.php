@@ -1,4 +1,4 @@
-@extends('Phase2.Phase2Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -18,7 +18,7 @@
   @csrf
   <div class="table-holder-2">
 <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark">
     <tr><td></td>
       <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
@@ -60,7 +60,7 @@
 </div>
 <div class = "table-holder-2">
 <table class="table table-hover">
-<thead class="p1">
+<thead class="thead-dark">
     <tr><td></td>
       <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
@@ -75,7 +75,7 @@
     </tr>
   </thead>
   <tbody>
-<th >Courses to be Offered</th>
+<th>Courses to be Offered</th>
   @foreach ($courses as $course)
 <tr><td></td>
   <td>{{ $course->CourseCode }}</td>

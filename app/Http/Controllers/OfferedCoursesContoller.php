@@ -127,7 +127,7 @@ class OfferedCoursesContoller extends Controller
         DB::update('UPDATE offered_course 
         SET IsOffered = ?, No_of_Sec=?, No_of_Teachers=?, Loads=? 
         WHERE OfferedCourseId = ?',[$IsOffered, $No_of_Sec, $No_of_Teachers, $Load, $id]);
-        return  redirect('/AssignTeacher') -> with('success', 'Course Updated Successfully');
+        return  redirect('AssignTeacher/'.$id) -> with('success', 'Course Updated Successfully');
     }
 
     /**

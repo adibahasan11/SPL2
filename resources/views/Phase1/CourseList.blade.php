@@ -1,13 +1,13 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
-<div class = "table-holder">
+<div class = "table-holder"><br>
 <div  align="right">
         <a href="{{url('/CourseListpdf')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
 </div>
 <br>
 <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>

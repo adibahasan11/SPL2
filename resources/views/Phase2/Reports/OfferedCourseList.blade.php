@@ -1,7 +1,7 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
-<div class = "table-holder">
+<div class = "table-holder"><br>
 <div  align="right">
         <a href="{{url('/offeredpdf')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
 </div><br>

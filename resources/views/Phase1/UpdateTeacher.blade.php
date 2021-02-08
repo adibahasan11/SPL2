@@ -1,4 +1,4 @@
-@extends('Phase1.Phase1Layout')
+@extends('Layouts.admin')
 
 @section('content')
 <div class="container">
@@ -47,8 +47,8 @@
                 <tr>
                     <td>Is Active?</td>
                     <td>
-                    <div><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'Yes'/> Yes</div>
-                    <div><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'No'/> No</div>
+                    <div><input type="radio" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'Yes' required/> Yes</div>
+                    <div><input type="radio" class= "teacher-checkbox" id="IsActive" name="IsActive" value = 'No' required/> No</div>
                     </td>
                 </tr>
                     <br></br>

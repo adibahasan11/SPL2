@@ -113,7 +113,7 @@ class AddCoursesController extends Controller
         DB::update('UPDATE added_courses 
             SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=? 
             WHERE id = ?',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour, $id]);
-        return redirect('/addcourse')->with('message' ,'Record updated successfully.');
+        return redirect('OfferingCourse/'.$id)->with('message' ,'Record updated successfully.');
     }
 
     /**

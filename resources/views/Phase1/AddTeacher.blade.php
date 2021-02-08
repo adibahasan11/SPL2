@@ -1,4 +1,4 @@
-@extends('Phase1.Phase1Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -15,13 +15,13 @@
 <form action = "/createteacher" method = "post">
 @csrf
 <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark">
     <tr><th></th><th></th>
       <th scope="col">Full Name</th>
       <th scope="col">Initials</th>
       <th scope="col">Designation</th>
       <th scope="col">Load Remaining</th>
-      <th scope="col">Is Active?</th>
+      <th scope="col">Active?</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -48,8 +48,8 @@
         <option>Lecturer</option>
         </select></div>
         <td></td>
-      <td><div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Yes"> Yes </div>
-      <div class="form-group c-box"><input type="checkbox" class= "teacher-checkbox" id="IsActive" name="IsActive" value="No"> No </div>
+      <td><div class="form-group c-box"><input type="radio" class= "teacher-checkbox" id="IsActive" name="IsActive" value="Yes" required> Yes </div>
+      <div class="form-group c-box"><input type="radio" class= "teacher-checkbox" id="IsActive" name="IsActive" value="No" required> No </div>
       </td>
       <td><div class="form-group">
       <button class="btn btn-primary btn-edit" id="edit"> Submit </button>

@@ -1,4 +1,4 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
 @php ($i = 0)
@@ -8,11 +8,11 @@
 @php($result = $result + $sumOfLoad->Loads)
 @endforeach
 <div class = "table-holder">
-<div  align="right">
+<div  align="right"><br>
         <a href="{{url('/facultyRequirementPDF')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
 </div><br>
 <table class="table table-hover table-bordered">
-  <thead class="p1">
+  <thead class="thead-dark-2">
     <tr>
       <th scope="col">Designation</th>
       <th scope="col">Offered Load</th>
@@ -68,12 +68,12 @@
     <th>{{ $result - $i }}</th>
  </tr>
  </tbody>
- <thead class="p2">
+ <thead class="thead-dark">
     <tr> 
       <th scope="col" colspan = 6 class= "heading"><b>Required Faculties</b></th>
     </tr>
   </thead>
-  <thead class="p1">
+  <thead class="thead-dark-2">
     <tr>
       <th scope="col">Designation</th>
       <th scope="col">Offered Load</th>

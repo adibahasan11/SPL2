@@ -1,4 +1,4 @@
-@extends('Layouts.ReportsLayout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -11,8 +11,8 @@
 @php ($theory = 0)
 @php ($lab = 0)
 <div class="table-holder">
-<table class="table table-hover table-bordered">
-  <thead class="thead-dark">
+<table class="table table-hover table-bordered-2">
+  <thead class="thead-dark-2">
     <tr>
       <td colspan = 2><b>{{$teacher->Name}}</b></td>
       <td colspan = 2><b>Remaining Load = {{$teacher->Loads_remaining}}</b></td>
@@ -34,11 +34,11 @@
         @if($course->CourseType === 'Theory')
             <td>{{$course->Loads}}</td>
             <td></td>
-            {{$theory = $theory + $course->Loads}}
+            @php($theory = $theory + $course->Loads)
         @elseif($course->CourseType === 'Lab')
             <td></td>
             <td>{{$course->Loads}}</td>
-            {{$lab = $lab + $course->Loads}}
+            @php($lab = $lab + $course->Loads)
         @endif
     @endif
 </tr>

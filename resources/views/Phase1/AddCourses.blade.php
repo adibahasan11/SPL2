@@ -1,4 +1,4 @@
-@extends('Phase1.Phase1Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -16,8 +16,9 @@
 <h4 class = "summer"><b>Summer Semester</b></h4>
 <form action = "/create" method = "post">
 	@csrf
+  <div class="table-holder-3">
 <table class="table table-hover">
-  <thead class="p1">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
@@ -87,6 +88,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 </form>
 
 @endsection

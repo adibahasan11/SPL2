@@ -1,4 +1,4 @@
-@extends('Phase3.Phase3Layout')
+@extends('Layouts.admin')
 
 @section('content')
 
@@ -20,9 +20,10 @@
 <h4 class = "summer"><b>Summer Semester</b></h4>
 	@csrf
   <h5 class = "summer"><b>Courses assigned with Teachers</b></h5>
+  <div class="table-holder-3">
   <table class="table table-hover">
-  <thead class="p1">
-    <tr><td></td><td></td>
+  <thead class="thead-dark-2">
+    <tr>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
@@ -39,7 +40,7 @@
   </thead>
   <tbody>  
   @foreach ($offeredcourses_assigned as $offeredcourse_assigned)
-  <tr><td></td> <td></td>
+  <tr>
   <td>{{ $offeredcourse_assigned->OfferedCourseId }}</td>
   <td>{{ $offeredcourse_assigned->CourseTitle }}</td>
   <td>{{ $offeredcourse_assigned->CourseCode }}</td>
@@ -66,4 +67,5 @@
   @endforeach
   </tbody>
 </table>
+</div>
 @endsection
