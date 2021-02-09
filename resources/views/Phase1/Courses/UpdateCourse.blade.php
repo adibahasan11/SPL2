@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-        <form action = "/edit/<?php echo $courses[0]->id; ?>" method = "post">
+        <form action = "/edit/<?php echo $courses[0]->id; ?>/<?php echo $courses[0]->Credit; ?>" method = "post">
             <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
             <table  class="table table-hover">
                 <tr>

@@ -56,8 +56,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('addcourse','App\Http\Controllers\AddCoursesController@create');
 Route::post('create','App\Http\Controllers\AddCoursesController@store');
 
-Route::get('edit/{id}','App\Http\Controllers\AddCoursesController@show');
-Route::post('edit/{id}','App\Http\Controllers\AddCoursesController@edit');
+Route::get('edit/{id}/{OldCredit}','App\Http\Controllers\AddCoursesController@show');
+Route::post('edit/{id}/{OldCredit}','App\Http\Controllers\AddCoursesController@edit');
 
 Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');
 Route::get('/CourseListpdf','App\Http\Controllers\AddCoursesController@downloadPdf');
@@ -84,8 +84,11 @@ Route::get('/facultyRequirementPDF','App\Http\Controllers\AddTeacherController@g
 Route::get('SummaryCourseLoad','App\Http\Controllers\OfferedCoursesContoller@summaryOfCourseLoad');
 Route::get('/SummeryCoursePDF','App\Http\Controllers\OfferedCoursesContoller@downloadSummaryOfCourseLoad');
 
-Route::get('AssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@pageView');
-Route::post('AssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@store');
+Route::get('AssignTeacher','App\Http\Controllers\AssignTeacherController@pageView');
+//Route::post('AssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@store');
+
+Route::get('InsertAssignedTeacher/{id}','App\Http\Controllers\AssignTeacherController@pageViewForInsert');
+Route::post('InsertAssignedTeacher/{id}','App\Http\Controllers\AssignTeacherController@store');
 
 Route::get('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@show');
 Route::post('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@update');

@@ -17,11 +17,12 @@
   </thead>
   <tbody>
   @foreach ($teachers as $teacher)
-<tr>
+<tr>@if ($teacher->Initials != " ")
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
   <td>{{ $teacher->Designations }}</td>
   <td>{{ $teacher->IsActive }}</td>
+  @endif
 </tr>
  @endforeach
  </tbody>

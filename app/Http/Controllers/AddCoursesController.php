@@ -19,7 +19,7 @@ class AddCoursesController extends Controller
     public function index()
     {
         $courses = DB::select('select * from added_courses');
-        return view('Phase1.CourseList',['courses'=>$courses]);
+        return view('Phase1.Reports.CourseList',['courses'=>$courses]);
     }
 
     /**
@@ -31,14 +31,14 @@ class AddCoursesController extends Controller
     public function downloadPdf()
     {
         $courses = AddedCourses::all();
-        $pdf = PDF::loadView('Phase1.CoursePDF',compact('courses'));
+        $pdf = PDF::loadView('Phase1.Reports.CoursePDF',compact('courses'));
         return $pdf->stream('CourseList.pdf');
     }
 
     public function create()
     {
         $courses = DB::select('select * from added_courses');
-        return view('Phase1.AddCourses',['courses'=>$courses]);
+        return view('Phase1.Courses.AddCourses',['courses'=>$courses]);
     }
 
     /**
@@ -86,10 +86,10 @@ class AddCoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $OldCredit)
     {
         $courses = DB::select('SELECT * FROM added_courses WHERE id = ?',[$id]);
-        return view('Phase1.UpdateCourse',['courses'=>$courses]);
+        return view('Phase1.Courses.UpdateCourse',['courses'=>$courses]);
     }
 
     /**
@@ -98,7 +98,7 @@ class AddCoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit(Request $request, $id, $OldCredit)
     {
         $CourseCode = $request->input('CourseCode');
         $CourseTitle = $request->input('CourseTitle');
@@ -113,7 +113,12 @@ class AddCoursesController extends Controller
         DB::update('UPDATE added_courses 
             SET CourseCode = ?, CourseTitle=?, Dept=?, Sem=?, CourseType=?, Comp_Mand=?, Credit=?, ContactHour=?, E_ContactHour=? 
             WHERE id = ?',[$CourseCode, $CourseTitle, $Dept, $Sem, $CourseType, $Comp_Mand, $Credit, $ContactHour, $E_ContactHour, $id]);
-        return redirect('OfferingCourse/'.$id)->with('message' ,'Record updated successfully.');
+        if($Credit != $OldCredit){
+            return redirect('OfferingCourse/'.$id)->with('message' ,'Credit updated successfully.');
+        }
+        else {
+            return redirect('/addcourse')->with('message' ,'Record updated successfully.');
+        }
     }
 
     /**

@@ -113,7 +113,8 @@ p{
     </thead>
     <tbody>
     @foreach ($teachers as $teacher)
-        <tr>
+    @if ($teacher->Initials != " ")
+    <tr>
             <td>
                 {{$teacher->Name}}
             </td>
@@ -127,6 +128,7 @@ p{
                 {{$teacher->IsActive}}
             </td>
         </tr>
+        @endif
     @endforeach
     </tbody>
 </table>

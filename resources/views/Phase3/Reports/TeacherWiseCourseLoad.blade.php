@@ -8,6 +8,7 @@
         <a href="{{url('/TeacherWiseReportPDF')}}" class="btn btn-outline-danger btn-sm">Get PDF report</a>
 </div></div><br>
 @foreach($teachers as $teacher)
+@if ($teacher->Initials != " ")
 @php ($theory = 0)
 @php ($lab = 0)
 <div class="table-holder">
@@ -52,5 +53,6 @@
   </tbody>
 </table>
 </div>
+@endif
 @endforeach
 @endsection

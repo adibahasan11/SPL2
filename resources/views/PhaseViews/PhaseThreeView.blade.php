@@ -30,12 +30,12 @@
                         <div class="inner">
                             <h2>Assigned Teachers</h2>
 
-                            <p>View Assigned Teachers and edit their load</p>
+                            <p>Assign Teachers to offered Courses based on availability and edit their load</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
                         </div>
-                        <a href="ViewAssignTeacher" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="AssignTeacher" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

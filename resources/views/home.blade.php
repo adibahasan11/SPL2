@@ -81,7 +81,7 @@
                         <div class="inner">
                             <h2>Phase 1</h2>
 
-                            <p>3</p>
+                            <p>Add Courses and Teachers into the system</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
@@ -96,7 +96,7 @@
                         <div class="inner">
                             <h2>Phase 2</h2>
 
-                            <p>2</p>
+                            <p>Offer Courses and Calculate load</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
@@ -111,7 +111,7 @@
                         <div class="inner">
                             <h2>Phase 3</h2>
 
-                            <p>3</p>
+                            <p>Assign Teachers to offered Courses</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>

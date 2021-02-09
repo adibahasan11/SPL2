@@ -14,14 +14,24 @@ use App\Models\AssignTeacher;
 
 class assignTeacherController extends Controller
 {
-    public function pageView($id){
+    public function pageView(){
+        $offeredcourses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 0 
+                                       ');
+        $offeredcourses_assigned = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 1 ');
+        $assignedteachers = DB::select('select * from assign_teachers');
+        $teachers = DB::select('select * from add_teachers where IsActive = "Yes" and Loads_remaining > 0');
+
+        return view('Phase3.AssignTeachers.AssignTeacher')->with(array('offeredcourses'=>$offeredcourses, 'offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
+    }
+
+    public function pageViewForInsert($id){
         $offeredcourses = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 0 
                                        and added_courses.id = ?',[$id]);
         $offeredcourses_assigned = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 1 ');
         $assignedteachers = DB::select('select * from assign_teachers');
         $teachers = DB::select('select * from add_teachers where IsActive = "Yes" and Loads_remaining > 0');
 
-        return view('Phase3.AssignTeacher')->with(array('offeredcourses'=>$offeredcourses, 'offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
+        return view('Phase3.AssignTeachers.InsertAssignedTeacher')->with(array('offeredcourses'=>$offeredcourses, 'offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
     }
 
     public function store(Request $request, $id)
@@ -36,7 +46,7 @@ class assignTeacherController extends Controller
             AssignTeacher::insert($data);
             
         }
-        return  redirect('/ViewAssignTeacher')-> with('success', 'Data Added');
+        return  redirect('/AssignTeacher')-> with('success', 'Data Added');
     }
 
     public function show($id)
@@ -44,7 +54,7 @@ class assignTeacherController extends Controller
         $offered_course = DB::select('SELECT Loads FROM offered_course WHERE OfferedCourseId = ?',[$id]);
         $teachers = DB::select('SELECT * from add_teachers where IsActive = "Yes" and Loads_remaining > 0');
         $courses = DB::select('SELECT * FROM assign_teachers WHERE OfferedCourseId = ?',[$id]);
-        return view('Phase3.AssigningTeacher')->with(array('offered_course'=>$offered_course, 'courses'=>$courses, 'teachers'=>$teachers));
+        return view('Phase3.AssignTeachers.AssigningTeacher')->with(array('offered_course'=>$offered_course, 'courses'=>$courses, 'teachers'=>$teachers));
     }
 
     public function update(Request $request, $OfferedCourseId)
@@ -56,7 +66,7 @@ class assignTeacherController extends Controller
             $a_teacher = AssignTeacher::where ('OfferedCourseId', $OfferedCourseId)->where('Initials', $request->Initials[$key]);
             $a_teacher->update($data);
         }
-        return redirect('/ViewAssignTeacher')->with('message' ,'Record updated successfully.');
+        return redirect('/AssignTeacher')->with('message' ,'Record updated successfully.');
     }
 
     public function index()
@@ -65,14 +75,14 @@ class assignTeacherController extends Controller
         $assignedteachers = DB::select('select * from assign_teachers');
         $teachers = DB::select('select * from add_teachers where IsActive = "Yes" and Loads_remaining > 0');
 
-        return view('Phase3.ViewAssignTeacher')->with(array('offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
+        return view('Phase3.AssignTeachers.ViewAssignTeacher')->with(array('offeredcourses_assigned'=>$offeredcourses_assigned, 'assignedteachers'=>$assignedteachers, 'teachers'=>$teachers));
     }
     public function viewTeacherWiseReport()
     {
         $teachers = DB::select('select * from add_teachers where isActive = "Yes"');
         $courses = DB::select('select * from added_courses a, assign_teachers at where a.id = at.OfferedCourseId');
         
-        return view('Phase3.TeacherWiseCourseLoad')->with(array('courses'=>$courses, 'teachers'=>$teachers));
+        return view('Phase3.Reports.TeacherWiseCourseLoad')->with(array('courses'=>$courses, 'teachers'=>$teachers));
     }
 
     public function getTeacherWiseReportPDF()
@@ -93,7 +103,7 @@ class assignTeacherController extends Controller
                             and of.isOffered = "Offered" and of.IsAssigned = "1"');
         $teachers = DB::select('select * 
                                 from assign_teachers');
-        return view('Phase3.SemesterWiseReport')->with(array('courses'=>$courses, 'teachers'=>$teachers));
+        return view('Phase3.Reports.SemesterWiseReport')->with(array('courses'=>$courses, 'teachers'=>$teachers));
     }
 
     public function getSemesterWiseReportPDF()

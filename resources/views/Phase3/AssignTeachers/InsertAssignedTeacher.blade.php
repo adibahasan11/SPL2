@@ -19,59 +19,12 @@
 @endif
 <h4 class = "summer"><b>Summer Semester</b></h4>
 <form action = "AssignTeacher" method = "post">
-	@csrf
-  <--<h5 class = "summer"><b>Courses assigned with Teachers</b></h5>
-  <table class="table table-hover">
-  <thead class="thead-dark-2">
-    <tr><td></td><td></td>
-      <th scope="col">Serial</th>
-      <th scope="col">Course Code</th>
-      <th scope="col">Course Title</th>
-      <th scope="col">Department</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Course Type</th>
-      <th scope="col">Credit</th>
-      <th scope="col">Effective Contact Hour</th>
-      <th scope="col">Total Load</th>
-      <th scope="col">Assign Teacher</th>
-      <th scope="col">Assigned Load</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>  
-  @foreach ($offeredcourses_assigned as $offeredcourse_assigned)
-  <tr><td></td> <td></td>
-  <td>{{ $offeredcourse_assigned->OfferedCourseId }}</td>
-  <td>{{ $offeredcourse_assigned->CourseTitle }}</td>
-  <td>{{ $offeredcourse_assigned->CourseCode }}</td>
-  <td>{{ $offeredcourse_assigned->Dept }}</td>
-  <td>{{ $offeredcourse_assigned->Sem }}</td>
-  <td>{{ $offeredcourse_assigned->CourseType }}</td>
-  <td>{{ $offeredcourse_assigned->Credit }}</td>
-  <td>{{ $offeredcourse_assigned->E_ContactHour }}</td>
-  <td>{{ $offeredcourse_assigned->Loads }}</td>
-  <td>@foreach ($assignedteachers as $assignedteacher)
-        @if ( $assignedteacher->OfferedCourseId == $offeredcourse_assigned->OfferedCourseId )
-          <div>{{$assignedteacher->Initials}}</div>
-        @endif
-      @endforeach
-  </td>
-  <td>@foreach ($assignedteachers as $assignedteacher)
-        @if ( $assignedteacher->OfferedCourseId == $offeredcourse_assigned->OfferedCourseId )
-          <div>{{$assignedteacher->Loads}}</div>
-        @endif
-      @endforeach
-  </td>
-  <td><div class="form-group">
-        <a class="btn btn-primary btn-edit" id="edit" href ='editAssignTeacher/{{ $offeredcourse_assigned->OfferedCourseId }}'> Edit </a></div></td>
-  @endforeach
-  </tbody>
-</table>
-
+@csrf
 <h5 class = "summer"><b>Courses not assigned Teachers</b></h5>
+<div class="table-holder-2">
 <table class="table table-hover">
   <thead class="thead-dark-2">
-    <tr><td></td><td></td>
+    <tr>
       <th scope="col">Serial</th>
       <th scope="col">Course Code</th>
       <th scope="col">Course Title</th>
@@ -88,7 +41,7 @@
   </thead>
   <tbody>
   @foreach ($offeredcourses as $offeredcourse)
-<tr><td></td> <td></td>
+<tr>
   <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="OfferedCourseId" value="{{ $offeredcourse->OfferedCourseId }}" required></div></td>
   <td>{{ $offeredcourse->CourseTitle }}</td>
   <td><div class="form-group"><input type="text" class="form-control" id="inputDefault" name="CourseCode" value="{{ $offeredcourse->CourseCode }}" required></div></td>
@@ -98,7 +51,7 @@
   <td>{{ $offeredcourse->Credit }}</td>
   <td>{{ $offeredcourse->E_ContactHour }}</td>
   <td>{{ $offeredcourse->Loads }}</td>
-  {{ $a_teacher = $offeredcourse->No_of_Teachers }}
+  @php($a_teacher = $offeredcourse->No_of_Teachers)
   <td>
   @for ($i = 1; $i <= $a_teacher; ++$i)
     <div class="form-group">
@@ -122,6 +75,7 @@
 
 </tbody>
 </table>
+</div>
 </form>
 
 @endsection

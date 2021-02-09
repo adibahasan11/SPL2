@@ -47,7 +47,7 @@
   <td>{{ $course->ContactHour }}</td>
   <td>{{ $course->E_ContactHour }}</td>
   <td><div class="form-group">
-        <a class="btn btn-primary btn-edit" id="edit" href ='edit/{{ $course->id }}'> Edit </a></div></td>
+        <a class="btn btn-primary btn-edit" id="edit" href ='edit/{{ $course->id }}/{{ $course->Credit }}'> Edit </a></div></td>
 </tr>
  @endforeach
     <tr id="row1">

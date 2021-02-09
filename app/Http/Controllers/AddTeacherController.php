@@ -19,7 +19,7 @@ class AddTeacherController extends Controller
     public function index()
     {
         $teachers = DB::select('select * from add_teachers');
-        return view('Phase1.AddTeacher',['teachers'=>$teachers]);
+        return view('Phase1.Teachers.AddTeacher',['teachers'=>$teachers]);
     }
 
     /**
@@ -30,13 +30,13 @@ class AddTeacherController extends Controller
     public function create()
     {
         $teachers = DB::select('select * from add_teachers');
-        return view('Phase1.TeacherList',['teachers'=>$teachers]);
+        return view('Phase1.Reports.TeacherList',['teachers'=>$teachers]);
     }
 
     public function downloadPDF()
     {
         $teachers = DB::select('select * from add_teachers');
-        $pdf = PDF::loadView('Phase1.TeacherListPDF', ['teachers'=>$teachers]);
+        $pdf = PDF::loadView('Phase1.Reports.TeacherListPDF', ['teachers'=>$teachers]);
 
         return $pdf->download('Teacher List.pdf');
     }
@@ -107,7 +107,7 @@ class AddTeacherController extends Controller
     public function show($id)
     {
         $teachers = DB::select('SELECT * FROM add_teachers WHERE Initials = ?',[$id]);
-        return view('Phase1.UpdateTeacher',['teachers'=>$teachers]);
+        return view('Phase1.Teachers.UpdateTeacher',['teachers'=>$teachers]);
     }
 
     /**

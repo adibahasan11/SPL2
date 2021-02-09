@@ -27,7 +27,8 @@
   </thead>
   <tbody>
   @foreach ($teachers as $teacher)
-<tr><td></td><th></th>
+<tr> @if ($teacher->Initials != " ")
+<td></td><th></th>
   <td>{{ $teacher->Name }}</td>
   <td>{{ $teacher->Initials }}</td>
   <td>{{ $teacher->Designations }}</td>
@@ -35,6 +36,7 @@
   <td>{{ $teacher->IsActive }}</td>
   <td><div class="form-group">
     <a class="btn btn-primary btn-edit" id="edit" href ='editTeacher/{{ $teacher->Initials }}'> Edit </a></div></td>
+    @endif
 </tr>
  @endforeach
     <tr id="row1"><th></th><th></th>

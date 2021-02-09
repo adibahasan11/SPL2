@@ -30,7 +30,7 @@
                         <div class="inner">
                             <h2>Offer Courses</h2>
 
-                            <p>Assign Courses to available teachers, Assign Teachers based on availability</p>
+                            <p>Offer Courses and calculate Loads</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-android-notifications"></i>
