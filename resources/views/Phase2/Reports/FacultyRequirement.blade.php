@@ -70,7 +70,7 @@
  </tbody>
  <thead class="thead-dark">
     <tr> 
-      <th scope="col" colspan = 6 class= "heading"><b>Required Faculties</b></th>
+      <th scope="col" colspan = 4 class= "heading"><b>Required Faculties</b></th>
     </tr>
   </thead>
   <thead class="thead-dark-2">

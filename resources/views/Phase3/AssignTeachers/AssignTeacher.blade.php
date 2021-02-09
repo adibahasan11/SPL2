@@ -66,7 +66,9 @@
       @endforeach
   </td>
   <td><div class="form-group">
-        <a class="btn btn-primary btn-edit" id="edit" href ='editAssignTeacher/{{ $offeredcourse_assigned->OfferedCourseId }}'> Edit </a></div></td>
+        <a class="btn btn-primary btn-edit" id="edit" href ='editAssignTeacher/{{ $offeredcourse_assigned->OfferedCourseId }}'> Edit </a></div><div>
+        <a class="btn btn-primary btn-edit" id="edit" href ='deleteAssignTeacher/{{ $offeredcourse_assigned->OfferedCourseId }}'> Unassign </a>
+  </div></td>
   @endforeach
   </tbody>
 </table>

@@ -93,6 +93,8 @@ Route::post('InsertAssignedTeacher/{id}','App\Http\Controllers\AssignTeacherCont
 Route::get('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@show');
 Route::post('editAssignTeacher/{id}','App\Http\Controllers\AssignTeacherController@update');
 
+Route::get('deleteAssignTeacher/{OfferedCourseId}','App\Http\Controllers\AssignTeacherController@destroy');
+
 Route::get('ViewAssignTeacher','App\Http\Controllers\AssignTeacherController@index');
 
 Route::get('TeacherWiseReport','App\Http\Controllers\AssignTeacherController@viewTeacherWiseReport');

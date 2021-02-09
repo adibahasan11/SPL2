@@ -122,29 +122,28 @@ p{
     @foreach ($teachers as $teacher)
 <tr>
   <td>{{ $teacher->Designation }}</td>
-  <td>{{ $teacher->Loads }}</td>
+  <td>{{$teacher->Loads}}</td>
 
   @if($teacher->Designation === 'Professor')
   @php($i = $i + $teacher->Loads*$Professor)
   <td>{{ $Professor }}</td>
-  <td>{{ $teacher->Loads*$Professor }}</td>
-
-  @elseif($teacher->Designation === 'Associate Professor')
+  <td>{{$teacher->Loads*$Professor}}</td>
+  @endif
+  @if($teacher->Designation === 'Associate Professor')
   @php($i = $i + $teacher->Loads*$AscProfessor)
   <td>{{ $AscProfessor }}</td>
-  <td>{{  $teacher->Loads*$AscProfessor }}</td>
-
-  @elseif($teacher->Designation === 'Assistant Professor')
+  <td>{{$teacher->Loads*$AscProfessor}}</td>
+  @endif
+  @if($teacher->Designation === 'Assistant Professor')
   @php($i = $i + $teacher->Loads*$AstProfessor)
   <td>{{ $AstProfessor }}</td>
-  <td>{{  $teacher->Loads*$AstProfessor }}</td>
-
-  @elseif($teacher->Designation === 'Lecturer')
+  <td>{{$teacher->Loads*$AstProfessor}}</td>
+  @endif
+  @if($teacher->Designation === 'Lecturer')
   @php($i = $i + $teacher->Loads*$Lecturer)
   <td>{{ $Lecturer }}</td>
-  <td>{{  $teacher->Loads*$Lecturer }}</td>
-
-@endif
+  <td>{{$teacher->Loads*$Lecturer}}</td>
+  @endif
 </tr>
  @endforeach
  <tr>
@@ -166,7 +165,7 @@ p{
     <th>{{ $result - $i }}</th>
  </tr> 
     <tr> 
-      <th scope="col" colspan = 6 class= "heading"><b>Required Faculties</b></th>
+      <th scope="col" colspan = 4 class= "heading"><b>Required Faculties</b></th>
     </tr>
   
  

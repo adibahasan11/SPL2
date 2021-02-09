@@ -69,6 +69,12 @@ class assignTeacherController extends Controller
         return redirect('/AssignTeacher')->with('message' ,'Record updated successfully.');
     }
 
+    public function destroy($OfferedCourseId)
+    {
+        DB::delete('delete from assign_teachers where OfferedCourseId = ?',[$OfferedCourseId]);
+        return redirect('/AssignTeacher')->with('message' ,'Unassigned successfully.');
+    }
+
     public function index()
     {
         $offeredcourses_assigned = DB::select('select * from added_courses, offered_course where added_courses.id = offered_course.OfferedCourseId and offered_course.IsOffered = "Offered" and offered_course.isAssigned = 1 ');

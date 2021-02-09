@@ -54,7 +54,7 @@
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
                         <form method="POST" class="user" action="{{ route('register') }}">
-                            @csrf
+                            @csrf<div class="col-sm-6">Name</div>
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-3 mb-sm-0">
                                     <input id="name" type="text"
@@ -68,6 +68,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div><div class="col-sm-6">Email</div></div>
                             <div class="form-group">
                                 <input id="email" type="email"
                                        class="form-control form-control-user @error('email') is-invalid @enderror"
@@ -78,6 +79,10 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">Password</div>
+                                <div class="col-sm-6">Repeat Password</div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">

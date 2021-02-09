@@ -61,7 +61,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
                                 <form method="POST" class="user" action="{{ route('login') }}">
-                                    @csrf
+                                    @csrf<div>Email</div>
                                     <div class="form-group">
                                         <input id="email" type="email"
                                                class="form-control form-control-user @error('email') is-invalid @enderror"
@@ -74,6 +74,7 @@
                                     </span>
                                         @enderror
                                     </div>
+                                    <div>Password</div>
                                     <div class="form-group">
                                         <input id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
                                         @error('password')
@@ -82,13 +83,13 @@
                                     </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group">
+                                    <!--<div class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <input class="form-check-input custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label class="custom-control-label" for="customCheck">Remember
                                                 Me</label>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
                                         {{ __('Login') }}
                                     </button>
