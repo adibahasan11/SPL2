@@ -50,6 +50,7 @@ Route::get('addcourse','App\Http\Controllers\AddCoursesController@create');
 Route::post('create','App\Http\Controllers\AddCoursesController@store');
 
 Route::get('edit/{id}','App\Http\Controllers\AddCoursesController@show');
+Route::get('delete/{id}','App\Http\Controllers\AddCoursesController@destroy');
 Route::post('edit/{id}','App\Http\Controllers\AddCoursesController@edit');
 
 Route::get('CourseList','App\Http\Controllers\AddCoursesController@index');

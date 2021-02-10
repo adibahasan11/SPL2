@@ -153,8 +153,10 @@ class AddCoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    /*public function destroy($id)
     {
-        //
-    }
+        $course = AddedCourses::find($id);
+        $course->delete();
+        return redirect()->route('Phase1.AddCourses')->with('success','Data deleted');
+    }*/
 }

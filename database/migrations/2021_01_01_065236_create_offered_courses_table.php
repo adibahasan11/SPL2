@@ -24,7 +24,8 @@ class CreateOfferedCoursesTable extends Migration
         });
 
         Schema::table('offered_course', function (Blueprint $table) {
-            $table->foreign('OfferedCourseId')->references('id')->on('added_courses');
+            $table->foreign('OfferedCourseId')->references('id')->on('added_courses')
+                ->onDelete('cascade');
         });
     }
 
