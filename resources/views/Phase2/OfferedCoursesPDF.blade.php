@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><b>Course List</b></title>
 </head>
-{{--<style>
+<style>
     th,
     td{
         border: 1px solid black;
@@ -20,7 +20,7 @@
     table{
         width:100%;
     }
-</style>--}}
+</style>
 <body>
 <h1 style="text-align: center">Offered Course List</h1>
 <table class="table table-bordered">
